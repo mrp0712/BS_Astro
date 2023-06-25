@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>
+            Display Numero Vastu Data
+        </title>
+    </head>
+    <body>
+        <div id="container"></div>
+    </body>
+    <script> 
+    const urlParams = new URLSearchParams(window.location.search);
+    const encodedData = urlParams.get('data');
+    const responseData = JSON.parse(decodeURIComponent(encodedData));
+
+    // Assuming there's a container element on the page
+    const container = document.getElementById('container')
+
+    // const div = document.createElement('div');
+    const name = document.createElement('p');
+    const day = document.createElement('p');
+    const month = document.createElement('p');
+    const year = document.createElement('p');
+    const title = document.createElement('p');
+    const description = document.createElement('p');
+        
+
+    name.textContent = `Name : ${responseData.name}`;
+    day.textContent = `Day : ${responseData.day}`;
+    month.textContent = `Month : ${responseData.month}`;
+    year.textContent = `Year : ${responseData.year}`;
+    title.textContent = `Title : ${responseData.title}`;
+    description.textContent = `Description : ${responseData.description}`;
+        
+    container.appendChild(name);
+    container.appendChild(day);
+    container.appendChild(month);
+    container.appendChild(year);
+    container.appendChild(title);
+    container.appendChild(description);
+    
+    </script>
+</html>

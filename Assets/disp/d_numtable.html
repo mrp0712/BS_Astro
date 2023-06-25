@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>
+            Display Numero Table Data
+        </title>
+    </head>
+    <body>
+        <div id="container"></div>
+    </body>
+    <script> 
+    const urlParams = new URLSearchParams(window.location.search);
+    const encodedData = urlParams.get('data');
+    const responseData = JSON.parse(decodeURIComponent(encodedData));
+
+    // Assuming there's a container element on the page
+    const container = document.getElementById('container')
+
+    const div = document.createElement('div');
+    const name = document.createElement('p');
+    const date = document.createElement('p');
+    const destiny_number = document.createElement('p');
+    const radical_number = document.createElement('p');
+    const name_number = document.createElement('p');
+    const evil_num = document.createElement('p');
+    const fav_color = document.createElement('p');
+    const fav_day = document.createElement('p');
+    const fav_god = document.createElement('p');
+    const fav_mantra = document.createElement('p');
+    const fav_metal = document.createElement('p');
+    const fav_stone = document.createElement('p');
+    const fav_substone = document.createElement('p');
+    const friendly_num = document.createElement('p');
+    const neutral_num = document.createElement('p');
+    const radical_num = document.createElement('p');
+    const radical_ruler = document.createElement('p');
+        
+
+    name.textContent = `Name: ${responseData.name}`;
+    date.textContent = `Date: ${responseData.date}`;
+    destiny_number.textContent = `destiny_number: ${responseData.destiny_number}`;
+    radical_number.textContent = `radical_number: ${responseData.radical_number}`;
+    name_number.textContent = `name_number: ${responseData.name_number}`;
+    evil_num.textContent = `evil_num: ${responseData.evil_num}`;
+    fav_color.textContent = `fav_color: ${responseData.fav_color}`;
+    fav_day.textContent = `fav_day: ${responseData.fav_day}`;
+    fav_god.textContent = `fav_god: ${responseData.fav_god}`;
+    fav_mantra.textContent = `fav_mantra: ${responseData.fav_mantra}`;
+    fav_metal.textContent = `fav_metal: ${responseData.fav_metal}`;
+    fav_stone.textContent = `fav_stone: ${responseData.fav_stone}`;
+    fav_substone.textContent = `fav_substone: ${responseData.fav_substone}`;
+    friendly_num.textContent = `friendly_num: ${responseData.friendly_num}`;
+    neutral_num.textContent = `neutral_num: ${responseData.neutral_num}`;
+    radical_num.textContent = `radical_num: ${responseData.radical_num}`;
+    radical_ruler.textContent = `radical_ruler: ${responseData.radical_ruler}`;
+        
+    container.appendChild(name);
+    container.appendChild(date);
+    container.appendChild(destiny_number);
+    container.appendChild(radical_number);
+    container.appendChild(name_number);
+    container.appendChild(evil_num);
+    container.appendChild(fav_color);
+    container.appendChild(fav_day);
+    container.appendChild(fav_god);
+    container.appendChild(fav_mantra);
+    container.appendChild(fav_metal);
+    container.appendChild(fav_stone);
+    container.appendChild(fav_substone);
+    container.appendChild(friendly_num);
+    container.appendChild(neutral_num);
+    container.appendChild(radical_num);
+    container.appendChild(radical_ruler);
+
+    </script>
+</html>

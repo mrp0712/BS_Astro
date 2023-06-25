@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>
+            Display Astro Details
+        </title>
+    </head>
+    <body>
+        <div id="container"></div>
+    </body>
+    <script> 
+    const urlParams = new URLSearchParams(window.location.search);
+    const encodedData = urlParams.get('data');
+    const responseData = JSON.parse(decodeURIComponent(encodedData));
+
+    // Assuming there's a container element on the page
+    const container = document.getElementById('container')
+
+    const table = document.createElement('table');
+
+</script>
+</html>
