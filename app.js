@@ -57,5 +57,5 @@ app.use('/r_manglik_report', r_manglikRouter)
 // Display Port Number
 app.listen(port_no, () => {
     console.log(`Server running on port : ${port_no}`)
-    // open('/Astrology/Assets/num_table.html');
+    // open('./BS_Astro/Asstes/index.html');
 })

@@ -123,7 +123,7 @@ event.preventDefault(); // Prevent form submission
                 </div>        
         <div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
           <div class="small-container">
-            <div class="row">
+            <div class="row" style="flex-wrap:none;">
                 <div class="col-2">
                     <div class="title" style = "margin:0 10px;">
                         <h4><b> Day </b> </h4>
