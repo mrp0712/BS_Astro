@@ -61,7 +61,7 @@ p{
 /* .col-2 img{
     /* min-width: 100%; */
     /* min-height: 100%; */
-    /* padding: 5%;
+    /* padding: 5%;     
     padding-left: 5%; */
 
 /* .col-2 img :hover{
@@ -79,7 +79,8 @@ p{
     padding: 8px 30px;
     margin: 30px 0;
     border-radius: 30px;
-    transition: background 0.5s;
+    transition: background 0.1s;
+    font-size: medium;
 }
 .btn:hover{
     background: #2c7921;

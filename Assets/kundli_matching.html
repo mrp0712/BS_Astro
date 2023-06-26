@@ -16,20 +16,21 @@
     <!--Custom Style shit-->
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
-    <link rel="Stylesheet" href="./css/style.css">
+        <link rel="Stylesheet" href="./css/style.css">
+        <link rel="Stylesheet" href="./css/form.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
         <style>
-            input {
+            /* input {
                 width: 20%;
             }
-    
+     */
             table {
                 border-collapse: collapse;
                 margin: 20px 20px;
-                width: 790px;
+                width: 500px;
                 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             }
     
@@ -48,7 +49,7 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="./images/mainlogo.png" width="120px" height="100%" margin="0px 0px 0px 0px">
+                    <img src="./images/mainlogo.png" width="130px" height="100%" margin="0px 0px 0px 0px">
                 </div>
                 <nav>
                     <ul>
@@ -70,36 +71,57 @@
     <img src="./images/astrology_banner.jpg" width="100%" height="350px">
 
 
-    <!-- astro page -->
+    <!-- Kundli Matching form -->
     <div class="panchang">
         <div class="small-container">
-            <div class="row">
-                <div class="col-2">
-                    <div class="form-container" style="height: 1050px;">
-                        <div class="form-title">
-                            <h3> Kundli Matching </h3>
-                        </div>
-                        <form method="post" id="myForm">
-                            <!--  Male -->
-                            <label for="mday"> M Day :</label> <br>
-                            <input type="number" id="mday" name="mday" min="1" max="31" placeholder="20"  required>
+            <!-- <div class="form-wrapper"> -->
+                    <form id="myForm"  method="post" style="width: 100%; background-color: lightgrey;">
+                        <div class="row" style="width: 100%; background-color: lightgrey;">
+                        
+                        <!-- Male -->
+                        <div class="col-2" style="height:350px; width:550px; align-content: left; display: inline-block;">
+                            <div class="form-container" style="width: 400px;">
                             
-                            <label for="mmonth">M Month:</label>
-                            <input type="number" id="mmonth" name="mmonth" min="1" max="12" placeholder="10" required>
+                            <div class="form-title">
+                               <label> Male Details</label>
+                            </div>
+                           
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="mday">Day</label> <br>
+                                    <input type="number" id="mday" name="mday" min="1" max="31" placeholder="20" required>
+                                </div>
+                        
+                                <div class="form-group">
+                                    <label for="mmonth">Month</label>
+                                    <input type="number" id="mmonth" name="mmonth" min="1" max="12" placeholder="10" required>
+                                </div>
 
-                            <label for="myear">M Year:</label>
-                            <input type="number" id="myear" name="myear" min="1900" max="2099" placeholder="2020" required>
+                                <div class="form-group">
+                                    <label for="myear">Year</label>
+                                    <input type="number" id="myear" name="myear" min="1900" max="2099" placeholder="2005" required>
+                                </div>
+                            </div>
 
-                            <label for="mhour">M Hour :</label> <br>
-                            <input type="number" id="mhour" name="mhour" min="1" max="23" placeholder="8" required>
-
-                            <label for="mmin">M Minute:</label>
-                            <input type="number" id="mmin" name="mmin" min="0" max="59" placeholder="30" required>
-
-                            <label for="mlocation">M City :</label>
-                            <input type="text" id="mlocation" name="mlocation" placeholder="ex. Ahmedabad, Gujarat, India"
-                                onkeyup="m_lat_lon()">
-
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="mhour">Hour</label> <br>
+                                    <input type="number" id="mhour" name="mhour" min="1" max="23" placeholder="8" required>
+                                </div>
+                                
+                                <div class="form-group"> 
+                                    <label for="mmin">Minute</label>
+                                    <input type="number" id="mmin" name="mmin" min="0" max="59" placeholder="30" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="mlocation">City</label>
+                                    <input type="text" id="mlocation" name="mlocation" placeholder="ex. Ahmedabad, Gujarat, India" onkeyup="m_lat_lon()">
+                                </div>
+                            </div>
+                            
                             <!-- <label for="lat">Latitude:</label> -->
                             <input type="hidden" id="mlat" name="mlat" value="" maxlength="5" readonly>
 
@@ -108,54 +130,73 @@
 
                             <!-- <label for="tzone">Time Zone:</label> -->
                             <input type="hidden" id="mtzone" name="mtzone" required>
+                            </div>
+                        </div>
 
+                    <!-- Female -->
+                    <div class="col-2" style="height:350px; width:550px; align-content: left; display: inline-block;">
+                        <div class="form-container" style="width: 400px;">
+                        
+                        <div class="form-title">
+                           <label> Female Details</label>
+                        </div>
+                       
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fday">Day</label> <br>
+                                <input type="number" id="fday" name="fday" min="1" max="31" placeholder="20"  required>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label for="fmonth">Month</label>
+                                <input type="number" id="fmonth" name="fmonth" min="1" max="12" placeholder="10" required>
+                            </div>
 
+                            <div class="form-group">
+                                <label for="fyear">Year</label>
+                                <input type="number" id="fyear" name="fyear" min="1900" max="2099" placeholder="2005" required>
+                            </div>
+                        </div>
 
-                            <!--  Female -->
-                            <label for="fday"> F Day :</label> <br>
-                            <input type="number" id="fday" name="fday" min="1" max="31" placeholder="20"  required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fhour">Hour</label> <br>
+                                <input type="number" id="fhour" name="fhour" min="1" max="23" placeholder="8" required>
+                            </div>
                             
-                            <label for="fmonth">F Month:</label>
-                            <input type="number" id="fmonth" name="fmonth" min="1" max="12" placeholder="10" required>
+                            <div class="form-group"> 
+                                <label for="fmin">Minute</label>
+                                <input type="number" id="fmin" name="fmin" min="0" max="59" placeholder="30" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="flocation">City</label>
+                                <input type="text" id="flocation" name="flocation" placeholder="ex. Ahmedabad, Gujarat, India" onkeyup="f_lat_lon()">
+                            </div>
+                        </div>
+                        
+                        <!-- <label for="lat">Latitude:</label> -->
+                        <input type="hidden" id="flat" name="flat" value="" maxlength="5" readonly>
 
-                            <label for="fyear">F Year:</label>
-                            <input type="number" id="fyear" name="fyear" min="1900" max="2099" placeholder="2020" required>
+                        <!-- <label for="lon">Longitude:</label> -->
+                        <input type="hidden" id="flon" name="flon" value="" maxlength="5" readonly>
 
-                            <label for="fhour">F Hour :</label> <br>
-                            <input type="number" id="fhour" name="fhour" min="1" max="23" placeholder="8" required>
-
-                            <label for="fmin">F Minute:</label>
-                            <input type="number" id="fmin" name="fmin" min="0" max="59" placeholder="30" required>
-
-                            <label for="flocation">F City :</label>
-                            <input type="text" id="flocation" name="flocation" placeholder="ex. Ahmedabad, Gujarat, India"
-                                onkeyup="f_lat_lon()">
-
-                            <!-- <label for="lat">Latitude:</label> -->
-                            <input type="hidden" id="flat" name="flat" value="" maxlength="5" readonly>
-
-                            <!-- <label for="lon">Longitude:</label> -->
-                            <input type="hidden" id="flon" name="flon" value="" maxlength="5" readonly>
-
-                            <!-- <label for="tzone">Time Zone:</label> -->
-                            <input type="hidden" id="ftzone" name="ftzone" required>
-
-                            <input type="submit" class="btn">
-                        </form>
-
-                    </div>
-                </div>
-                <div class="col-2">
-                    <img src="./images/panchang.png" class="panchang-img" style="height: 250px; width: 250px;">
-                </div>
-            </div>
-        </div>
+                        <!-- <label for="tzone">Time Zone:</label> -->
+                        <input type="hidden" id="ftzone" name="ftzone" required>
+                        </div>
+                    </div>      
+                </div>          
+                <input type="submit" class="form-btn" value="Match Kundli"> </div>
+            </form>
+        <!-- </div> -->
     </div>
 
     <!-- Result Show -->
-    <!-- <div id="table_body"></div> -->
+    <div id="table_body"></div>
 
-    <!-- Footer Side-->
+    <!-- Footer -->
     <div class="footer">
         <a href="https://brainsquaretech.com/" style="color: white;">Copyright &#169;  2023 - BrainSquareTech Pvt. Ltd.</a>
     </div>
