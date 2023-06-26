@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const basic_panchag_Schema = new mongoose.Schema({
+const today_panchag_Schema = new mongoose.Schema({
   day: {
     type: String,
     required: true,
@@ -66,5 +66,4 @@ const basic_panchag_Schema = new mongoose.Schema({
     required: true,
   }
 });
-
-module.exports = mongoose.model("db_basicpanchag", basic_panchag_Schema);
+module.exports = mongoose.model("today_panchang", today_panchag_Schema);

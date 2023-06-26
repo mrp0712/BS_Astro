@@ -27,4 +27,4 @@ const vastuSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("db_vastu", vastuSchema);
+module.exports = mongoose.model("numero_vastu", vastuSchema);

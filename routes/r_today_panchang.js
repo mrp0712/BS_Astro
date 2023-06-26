@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Basic_Panchag = require("../models/m_basicpanchag");
+const Basic_Panchag = require("../models/m_today_panchang");
 
 //Retrive basic_panchag
 router.get("/", async (req, res) => {

@@ -8,14 +8,14 @@ event.preventDefault(); // Prevent form submission
   const now = new Date()
 
   const data = {
-    day: now.getDate(),
-    month: now.getMonth() + 1,
-    year: now.getFullYear(),
-    hour: now.getHours(),
-    min: now.getMinutes(),
+    day: document.getElementById("day").value,
+    month: document.getElementById("month").value,
+    year: document.getElementById("year").value,
+    hour: document.getElementById("hour").value,
+    min: document.getElementById("min").value,
     lat: document.getElementById("lat").value,
     lon: document.getElementById("lon").value,
-    tzone: now.getTimezoneOffset() / 60
+    tzone: document.getElementById("tzone").value
   };
 
   const auth = "Basic " + btoa(userId + ":" + apiKey);
@@ -38,7 +38,7 @@ event.preventDefault(); // Prevent form submission
     })
     .then(function (responseData) {
       // console.log(responseData);
-      fetch("http://localhost:8080/r_astro", {
+      fetch("http://localhost:8080/r_free_kundli", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -60,7 +60,7 @@ event.preventDefault(); // Prevent form submission
 
           tabledata = `<div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
               <div class="small-container">
-                <h2 class="title"style="margin:0 15px;">ASTRO DETAILS</h2>
+                <h2 class="title"style="margin:0 15px;">Kundli Details</h2>
                 <div class="row">
                   <table>
                     <tr>
@@ -168,8 +168,6 @@ event.preventDefault(); // Prevent form submission
         })
         .catch(function (error) {
           console.log(error);
-
-
         });
     })
     .catch(function (error) {

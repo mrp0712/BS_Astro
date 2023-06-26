@@ -44,20 +44,18 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="./images/mainlogo.png" width="125px" height="70px">
+                    <img src="./images/mainlogo.png" width="120px" height="100%" margin="0px 0px 0px 0px">
                 </div>
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="basic_panchang.html">Today Panchang</a></li>
-                        <li><a href="astro_detail.html">Astro Details</a></li>
-                        <li><a href="chaughadiya_muhurta.html">Chaughadiya Muhurta</a></li>
-                        <li><a href="num_table.html">Numero Table</a> </li>
+                        <li><a href="free_kundli.html">Free Kundli</a></li>
+                        <li><a href="today_panchang.html">Today Panchang</a></li>
                         <li><a href="western_horoscope.html">Horoscope</a> </li>
+                        <li><a href="kundli_matching.html">Kundali Matching</a></li>
+                        <li><a href="chaughadiya_muhurta.html">Chaughadiya Muhurta</a></li>
+                        <!-- <li><a href="num_table.html">Numero Table</a> </li>
                         <li><a href="planet_detail.html">Planetary Transit</a> </li>
-                        <!-- <li><a href="#">Kundali Matching</a></li>
-                        <li><a href="#">Free Kundali</a></li>
-                        <li><a href="#">Shubh Mahurat</a> </li>
                         <li><a href="manglik_report.html">Manglik Report</a> -->
                     </ul>
                 </nav>
@@ -168,69 +166,4 @@
     </div>
     <script src="./crud/c_numvastu.js"></script>
 </body>
-<script> 
-    const urlParams = new URLSearchParams(window.location.search);
-    const encodedData = urlParams.get('data');
-    const responseData = JSON.parse(decodeURIComponent(encodedData));
-
-    const container = document.getElementById('container');
-
-    const table = document.createElement('table');
-
-    const nameRow = document.createElement('tr');
-    const nameCellLabel = document.createElement('th');
-    const nameCellData = document.createElement('td');
-    nameCellLabel.textContent = 'name';
-    nameCellData.textContent = responseData.name;
-    nameRow.appendChild(nameCellLabel);
-    nameRow.appendChild(nameCellData);
-    table.appendChild(nameRow);
-
-    const dayRow = document.createElement('tr');
-    const dayCellLabel = document.createElement('th');
-    const dayCellData = document.createElement('td');
-    dayCellLabel.textContent = 'Day';
-    dayCellData.textContent = responseData.day;
-    dayRow.appendChild(dayCellLabel);
-    dayRow.appendChild(dayCellData);
-    table.appendChild(dayRow);
-
-    const monthRow = document.createElement('tr');
-    const monthCellLabel = document.createElement('th');
-    const monthCellData = document.createElement('td');
-    monthCellLabel.textContent = 'Month';
-    monthCellData.textContent = responseData.month;
-    monthRow.appendChild(monthCellLabel);
-    monthRow.appendChild(monthCellData);
-    table.appendChild(monthRow);
-
-    const yearRow = document.createElement('tr');
-    const yearCellLabel = document.createElement('th');
-    const yearCellData = document.createElement('td');
-    yearCellLabel.textContent = 'Year';
-    yearCellData.textContent = responseData.year;
-    yearRow.appendChild(yearCellLabel);
-    yearRow.appendChild(yearCellData);
-    table.appendChild(yearRow);
-
-    const titleRow = document.createElement('tr');
-    const titleCellLabel = document.createElement('th');
-    const titleCellData = document.createElement('td');
-    titleCellLabel.textContent = 'Title';
-    titleCellData.textContent = responseData.title;
-    titleRow.appendChild(titleCellLabel);
-    titleRow.appendChild(titleCellData);
-    table.appendChild(titleRow);
-
-    const descriptionRow = document.createElement('tr');
-    const descriptionCellLabel = document.createElement('th');
-    const descriptionCellData = document.createElement('td');
-    descriptionCellLabel.textContent = 'Description';
-    descriptionCellData.textContent = responseData.description;
-    descriptionRow.appendChild(descriptionCellLabel);
-    descriptionRow.appendChild(descriptionCellData);
-    table.appendChild(descriptionRow);
-
-    container.appendChild(table);
-    </script>
 </html>

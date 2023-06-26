@@ -54,4 +54,4 @@ const chaughadiya_muhurta_Schema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model("db_muhurta", chaughadiya_muhurta_Schema);
+module.exports = mongoose.model("shubh_muhurat", chaughadiya_muhurta_Schema);

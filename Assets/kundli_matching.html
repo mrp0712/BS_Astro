@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manglik Report </title>
+    <title>Kundli Matching</title>
     <link src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" />
 
@@ -77,7 +77,7 @@
                 <div class="col-2">
                     <div class="form-container" style="height: 1050px;">
                         <div class="form-title">
-                            <h3> Manglik Details </h3>
+                            <h3> Kundli Matching </h3>
                         </div>
                         <form method="post" id="myForm">
                             <!--  Male -->
@@ -155,59 +155,13 @@
     <!-- Result Show -->
     <!-- <div id="table_body"></div> -->
 
-    <!-- <div class="result">
-        <div class="small-container">
-            <div class="row">
-                <div class="form-container" >
-                    <div class="form-title" >
-                        <span> Aestrology Details </span>
-                    </div>
-                    <div id="container"></div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <!-- Footer Side-->
     <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col-1">
-                    <h3>Download Our App</h3>
-                    <p> Download App for Android and ios Mobile Phone</p>
-                    <div class="app-logo">
-                        <img src="./images/play_store1.jpg"> &nbsp;
-                        <img src="./images/app_store1.jpg">
-                    </div>
-                </div>
-                <div class="footer-col-2">
-                    <img src="./images/hit.jpg" width="150px" height="150px">
-                    <p>our perpose is to working with module</p>
-                </div>
-                <div class="footer-col-3">
-                    <h3>Useful Link</h3>
-                    <ul>
-                        <li>Coupens</li>
-                        <li>Blog Post</li>
-                        <li>Return Policy</li>
-                        <li>Join Affiliate</li>
-                    </ul>
-                </div>
-                <div class="footer-col-4">
-                    <h3>Follow Us</h3>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Instagram</li>
-                        <li>You-tube</li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <p class="copyright"> Copyright 2023 - BrainSquareTech Pvt. Ltd.</p>
-        </div>
+        <a href="https://brainsquaretech.com/" style="color: white;">Copyright &#169;  2023 - BrainSquareTech Pvt. Ltd.</a>
     </div>
-    <script src="./crud/c_manglik_report.js"></script>
+    
+    <!-- CRUD File -->
+    <script src="./crud/c_kundli_matching.js"></script>
 
 <script>
     //male- Get Latitude & Longitude using geo-location
@@ -237,10 +191,8 @@
             var near_place = autocomplete.getPlace();
         });
     });
-</script>
 
-<script>
-    // male
+    // male location
     function m_lat_lon() {
         // Create a geocoder object
         const geocoder = new google.maps.Geocoder();
@@ -273,7 +225,7 @@
         });
     }
 
-    // female
+    // female location
     function f_lat_lon() {
         // Create a geocoder object
         const geocoder = new google.maps.Geocoder();

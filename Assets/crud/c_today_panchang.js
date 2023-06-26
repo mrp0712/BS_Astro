@@ -1,27 +1,21 @@
 document.getElementById("myForm").addEventListener("submit", async (event) => {
-  event.preventDefault(); // Prevent form submission
+event.preventDefault(); // Prevent form submission
+
+const api = "basic_panchang";
+const userId = "624429";
+const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
+
   const now = new Date()
-  const day = now.getDate()
-  const month = now.getMonth() + 1
-  const year = now.getFullYear()
-  const hour = now.getHours()
-  const min = now.getMinutes()
-  const tzone = now.getTimezoneOffset() / 60;
-  // const location = document.getElementById('location').value;
-  const lat = document.getElementById("lat").value;
-  const lon = document.getElementById("lon").value;
-  const api = "basic_panchang";
-  const userId = "624429";
-  const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
+
   const data = {
-    day: day,
-    month: month,
-    year: year,
-    hour: hour,
-    min: min,
-    lat: lat,
-    lon: lon,
-    tzone: tzone
+    day: now.getDate(),
+    month: now.getMonth() + 1,
+    year: now.getFullYear(),
+    hour: now.getHours(),
+    min: now.getMinutes(),
+    lat: document.getElementById("lat").value,
+    lon: document.getElementById("lon").value,
+    tzone: now.getTimezoneOffset() / 60
   };
   //var auth = "Basic " + new Buffer(userId + ":" + apiKey).toString("base64");
   const auth = "Basic " + btoa(userId + ":" + apiKey);
@@ -43,7 +37,7 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
     })
     .then(function (responseData) {
       console.log(responseData);
-      fetch("http://localhost:8080/r_basicpanchag", {
+      fetch("http://localhost:8080/r_today_panchang", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +59,7 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
         
             tabledata = `<div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
                   <div class="small-container">
-                    <h2 class="title"style="margin:0 15px;">PANCHANG DETAILS</h2>
+                    <h2 class="title"style="margin:0 15px;">Today Panchang Details</h2>
                     <div class="row">
                       <table>
                         <tr>

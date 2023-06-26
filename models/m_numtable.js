@@ -71,4 +71,4 @@ const numtableSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model("db_numtable", numtableSchema);
+module.exports = mongoose.model("numero_table", numtableSchema);

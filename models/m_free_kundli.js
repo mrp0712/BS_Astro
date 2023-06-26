@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const astroSchema = new mongoose.Schema({
+const KundliSchema = new mongoose.Schema({
   day: {
     type: String,
     required: true,
@@ -109,5 +109,4 @@ const astroSchema = new mongoose.Schema({
     required: true,
   }
 });
-
-module.exports = mongoose.model("db_astro", astroSchema);
+module.exports = mongoose.model("free_kundli", KundliSchema);

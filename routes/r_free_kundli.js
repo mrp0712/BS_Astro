@@ -1,31 +1,31 @@
 const express = require("express");
 const router = express.Router();
-const Astro = require("../models/m_astro");
+const FreeKundli = require("../models/m_free_kundli");
 
-//Retrive astrodetail
+//Retrive kundlidetail
 router.get("/", async (req, res) => {
   try {
-    const astro = await Astro.find();
-    res.json(astro);
+    const kundli = await FreeKundli.find();
+    res.json(kundli);
   } catch (err) {
     res.send("Error " + err);
   }
 });
 
-//get astrodetail by id
+//get kundlidetail by id
 router.get("/:id", async (req, res) => {
   try {
-    const astrodetail = await Astro.findById(req.params.id);
-    res.json(astrodetail);
+    const kundlidetail = await FreeKundli.findById(req.params.id);
+    res.json(kundlidetail);
   } catch (err) {
     res.send("Error :- " + err);
   }
 });
 
-// Insert astrodetail
+// Insert kundlidetail
 router.post("/", async (req, res) => {
   try {
-    const astro = new Astro({
+    const kundli = new FreeKundli({
       day: req.body.day,
       month: req.body.month,
       year: req.body.year,
@@ -54,40 +54,41 @@ router.post("/", async (req, res) => {
       name_alphabet: req.body.name_alphabet,
       paya: req.body.paya
     });
-    const a1 = await astro.save();
+    const a1 = await kundli.save();
     res.json(a1);
+    
   } catch (err) {
     console.log(err);
     res.send("Something went wrong");
   }
 });
 
-// Update astrodetail
+// Update kundlidetail
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const astro = await Astro.findByIdAndUpdate(id, req.body);
+    const kundli = await FreeKundli.findByIdAndUpdate(id, req.body);
 
-    if (!astro) {
+    if (!kundli) {
       return res.status(404).json({ message: `cannot find id :- ${id}` });
     }
-    const updateastrodetail = await Astro.findById(id);
-    res.status(200).json(updateastrodetail);
+    const updatekundlidetail = await FreeKundli.findById(id);
+    res.status(200).json(updatekundlidetail);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });
 
-// Delete astrodetail
+// Delete kundlidetail
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const astrodetail = await Astro.findByIdAndDelete(id, req.body);
-    if (!astrodetail) {
+    const kundlidetail = await FreeKundli.findByIdAndDelete(id, req.body);
+    if (!kundlidetail) {
       return res.status(404).json({ message: `cannot find ID : ${id}` });
     }
-    const deleteastrodetail = await Astro.findById(id);
-    res.json({ deleteastrodetail, message: "Delete Successfull" });
+    const deletekundlidetail = await FreeKundli.findById(id);
+    res.json({ deletekundlidetail, message: "Delete Successfull" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Manglik_Schema = new mongoose.Schema({
+const kundli_matching_Schema = new mongoose.Schema({
   day: {
     type: String,
     required: true,
@@ -142,4 +142,4 @@ const Manglik_Schema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model("db_manglik", Manglik_Schema);
+module.exports = mongoose.model("manglik_report", kundli_matching_Schema);

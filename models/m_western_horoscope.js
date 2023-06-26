@@ -164,4 +164,4 @@ planets: [{
     }]
 });
 
-module.exports = mongoose.model("db_horoscope", western_horoscope_Schema);
+module.exports = mongoose.model("horoscope", western_horoscope_Schema);
