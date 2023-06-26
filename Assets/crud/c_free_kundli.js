@@ -64,43 +64,11 @@ event.preventDefault(); // Prevent form submission
                 <div class="row">
                   <table>
                     <tr>
-                      <th>Day</th>
-                      <td>${responseData.day}</td>
-                    </tr>
-                    <tr>
-                      <th>Month</th>
-                      <td>${responseData.month}</td>
-                    </tr>
-                    <tr>
-                      <th>Year</th>
-                      <td>${responseData.year}</td>
-                    </tr>
-                    <tr>
-                      <th>Hour</th>
-                      <td>${responseData.hour}</td>
-                    </tr>
-                    <tr>
-                      <th>Min</th>
-                      <td>${responseData.min}</td>
-                    </tr>
-                    <tr>
-                      <th>Latitude</th>
-                      <td>${responseData.lat}</td>
-                    </tr>
-                    <tr>
-                      <th>Longitude</th>
-                      <td>${responseData.lon}</td>
-                    </tr>
-                    <tr>
-                      <th>Timezone</th>
-                      <td>${responseData.tzone}</td>
-                    </tr>
-                    <tr>
-                      <th>ascendant</th>
+                      <th>Ascendant</th>
                       <td>${responseData.ascendant}</td>
                     </tr>
                     <tr>
-                      <th>ascendant_lord</th>
+                      <th>Ascendant Lord</th>
                       <td>${responseData.ascendant_lord}</td>
                     </tr>
                     <tr>
@@ -128,7 +96,7 @@ event.preventDefault(); // Prevent form submission
                       <td>${responseData.SignLord}</td>
                     </tr>
                     <tr>
-                      <th>sign</th>
+                      <th>Sign</th>
                       <td>${responseData.sign}</td>
                     </tr>
                     <tr>
@@ -156,7 +124,7 @@ event.preventDefault(); // Prevent form submission
                       <td>${responseData.Tithi}</td>
                     </tr>
                     <tr>
-                      <th>yunja</th>
+                      <th>Yunja</th>
                       <td>${responseData.yunja}</td>
                     </tr>
                   </table>
@@ -174,3 +142,37 @@ event.preventDefault(); // Prevent form submission
       console.log(error);
     });
 });
+
+
+                    // <tr>
+                    //   <th>Day</th>
+                    //   <td>${responseData.day}</td>
+                    // </tr>
+                    // <tr>
+                    //   <th>Month</th>
+                    //   <td>${responseData.month}</td>
+                    // </tr>
+                    // <tr>
+                    //   <th>Year</th>
+                    //   <td>${responseData.year}</td>
+                    // </tr>
+                    // <tr>
+                    //   <th>Hour</th>
+                    //   <td>${responseData.hour}</td>
+                    // </tr>
+                    // <tr>
+                    //   <th>Min</th>
+                    //   <td>${responseData.min}</td>
+                    // </tr>
+                    // <tr>
+                    //   <th>Latitude</th>
+                    //   <td>${responseData.lat}</td>
+                    // </tr>
+                    // <tr>
+                    //   <th>Longitude</th>
+                    //   <td>${responseData.lon}</td>
+                    // </tr>
+                    // <tr>
+                    //   <th>Timezone</th>
+                    //   <td>${responseData.tzone}</td>
+                    // </tr>

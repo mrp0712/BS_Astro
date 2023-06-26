@@ -58,8 +58,7 @@ event.preventDefault(); // Prevent form submission
           console.log(responseData);
           
           let tabledata = "";
-          let daydata = "";
-          let nightdata = "";
+          // let data = "";
 
           // responseData..map((element) => {
           //   daydata += `
@@ -124,26 +123,61 @@ event.preventDefault(); // Prevent form submission
             <div class="row">
                 <div class="col-2">
                     <div class="title"style="margin:0 15px;">
-                        <h4><b> Day </b> </h4>
+                        <h4><b> Planets </b> </h4>
                     </div>
                     <table>
                         <tr>
-                            <th>Time</th>
-                            <th>Mahurat</th>
+                          <th>Name</th>
+                          <td>${responseData.planets[0].name}</td>
                         </tr>
-                        ${daydata}
+                        <tr>
+                          <th>Name</th>
+                          <td>${responseData.planets[1].name}</td>
+                        </tr>
+                        <tr>
+                          <th>Name</th>
+                          <td>${responseData.planets[2].name}</td>
+                        </tr>
+                        
                     </table>
                 </div>
                 <div class="col-2">
-                    <div class="title" style="margin:0 15px;">
-                        <h4><b> Night </b> </h4>
+                    <div class="title" style="margin:0 1px;">
+                        <h4><b> Lilith </b> </h4>
                     </div>
                     <table>
                         <tr>
-                            <th>Time</th>
-                            <th>Mahurat</th>
+                          <th>Name</th>
+                          <td>${responseData.lilith.name}</td>
                         </tr>
-                        ${nightdata}
+                        <tr>
+                          <th>Full Degree</th>
+                          <td>${responseData.lilith.full_degree}</td>
+                        </tr>
+                        <tr>
+                          <th>Normal Degree</th>
+                          <td>${responseData.lilith.norm_degree}</td>
+                        </tr>
+                        <tr>
+                          <th>Speed</th>
+                          <td>${responseData.lilith.speed}</td>
+                        </tr>
+                        <tr>
+                          <th>Is Retro ?</th>
+                          <td>${responseData.lilith.is_retro}</td>
+                        </tr>
+                        <tr>
+                          <th>Sign ID</th>
+                          <td>${responseData.lilith.sign_id}</td>
+                        </tr>
+                        <tr>
+                          <th>Sign</th>
+                          <td>${responseData.lilith.sign}</td>
+                        </tr>
+                        <tr>
+                          <th>House</th>
+                          <td>${responseData.lilith.house}</td>
+                        </tr>                        
                     </table>
                 </div>
             </div>
