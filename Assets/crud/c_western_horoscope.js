@@ -2,8 +2,8 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
 event.preventDefault(); // Prevent form submission
 
   const api = "western_horoscope";
-  const userId = "624429";
-  const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
+  const userId = "624428";
+  const apiKey = "a949db00ab0cbf4b3ea1a60d9563a6a4";
 
   const now = new Date()
 
@@ -34,11 +34,11 @@ event.preventDefault(); // Prevent form submission
         throw new Error("API request failed. Status: " + response.status);
       }
       const res = response.json();
-      // console.log(res)
+      console.log(res)
       return res;
     })
     .then(function (responseData) {
-      // console.log(responseData);
+      console.log(responseData);
       fetch("http://localhost:8080/r_western_horoscope", {
         method: "POST",
         headers: {

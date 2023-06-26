@@ -66,10 +66,10 @@ planets: [{
     house: {
         type: Number,
         required: true
-    },   
+    }   
     }],
 
-    house:[{
+    houses:[{
         house:{
             type: Number,
             required: true
@@ -81,7 +81,7 @@ planets: [{
         degree:{
             type: String,
             required: true
-        },
+        }
     }],
 
     ascendant:{
@@ -129,7 +129,7 @@ planets: [{
         house:{
             type: Number,
             required: true
-        },
+        }
     },
 
     aspects:[{
@@ -160,7 +160,7 @@ planets: [{
         diff:{
             type: String,
             required: true
-        },
+        }
     }]
 });
 
