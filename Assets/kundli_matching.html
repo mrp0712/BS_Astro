@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kundli Matching</title>
     <link src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" />
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href=" js/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href=" js/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href=" js/dist/css/adminlte.min.css">
+
 
     <!--FontOwsome cdn-->
     <script src="https://kit.fontawesome.com/5b95af3014.js" crossorigin="anonymous"></script>
@@ -23,10 +32,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
         <style>
-            /* input {
-                width: 20%;
-            }
-     */
             table {
                 border-collapse: collapse;
                 margin: 20px 20px;
@@ -56,7 +61,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="free_kundli.html">Free Kundli</a></li>
                         <li><a href="today_panchang.html">Today Panchang</a></li>
-                        <li><a href="western_horoscope.html">Horoscope</a> </li>
+                        <li><a href="horoscope.html">Horoscope</a> </li>
                         <li><a href="kundli_matching.html">Kundali Matching</a></li>
                         <li><a href="chaughadiya_muhurta.html">Chaughadiya Muhurta</a></li>
                         <!-- <li><a href="num_table.html">Numero Table</a> </li>
@@ -88,48 +93,49 @@
                            
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="mday">Day</label> <br>
-                                    <input type="number" id="mday" name="mday" min="1" max="31" placeholder="20" required>
+                                    <label for="day">Date</label> <br>
+                                    <input type="number" id="day" name="day" class="form-control" placeholder="20" required>
                                 </div>
                         
                                 <div class="form-group">
-                                    <label for="mmonth">Month</label>
-                                    <input type="number" id="mmonth" name="mmonth" min="1" max="12" placeholder="10" required>
+                                    <label for="month">Month</label>
+                                    <input type="number" id="month" name="month" class="form-control" placeholder="10" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="myear">Year</label>
-                                    <input type="number" id="myear" name="myear" min="1900" max="2099" placeholder="2005" required>
+                                    <label for="year">Year</label>
+                                    <input type="number" id="year" name="year" class="form-control" placeholder="2005" required>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="mhour">Hour</label> <br>
-                                    <input type="number" id="mhour" name="mhour" min="1" max="23" placeholder="8" required>
+                                    <label for="hour">Hour</label> <br>
+                                    <input type="number" id="hour" class="form-control" name="hour" placeholder="8" required>
                                 </div>
                                 
                                 <div class="form-group"> 
-                                    <label for="mmin">Minute</label>
-                                    <input type="number" id="mmin" name="mmin" min="0" max="59" placeholder="30" required>
+                                    <label for="min">Minute</label>
+                                    <input type="number" id="min" class="form-control" name="min" placeholder="30" required>
                                 </div>
                             </div>
                             
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="mlocation">City</label>
-                                    <input type="text" id="mlocation" name="mlocation" placeholder="ex. Ahmedabad, Gujarat, India" onkeyup="m_lat_lon()">
+                                    <label for="location">City</label>
+                                    <input type="text" id="location" class="form-control" name="location"
+                                    placeholder="ex. Ahmedabad, Gujarat, India" onkeyup="lat_lon()">
                                 </div>
                             </div>
                             
                             <!-- <label for="lat">Latitude:</label> -->
-                            <input type="hidden" id="mlat" name="mlat" value="" maxlength="5" readonly>
+                            <input type="hidden" id="lat" class="form-control" name="lat" value="" maxlength="5" readonly>
 
                             <!-- <label for="lon">Longitude:</label> -->
-                            <input type="hidden" id="mlon" name="mlon" value="" maxlength="5" readonly>
+                            <input type="hidden" id="lon" class="form-control" name="lon" value="" maxlength="5" readonly>
 
                             <!-- <label for="tzone">Time Zone:</label> -->
-                            <input type="hidden" id="mtzone" name="mtzone" required>
+                            <input type="hidden" id="tzone" class="form-control" name="tzone" required>
                             </div>
                         </div>
 
@@ -143,37 +149,38 @@
                        
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="fday">Day</label> <br>
-                                <input type="number" id="fday" name="fday" min="1" max="31" placeholder="20"  required>
+                                <label for="fday">Date</label> <br>
+                                <input type="number" id="fday" name="fday" placeholder="20"  required>
                             </div>
                     
                             <div class="form-group">
                                 <label for="fmonth">Month</label>
-                                <input type="number" id="fmonth" name="fmonth" min="1" max="12" placeholder="10" required>
+                                <input type="number" id="fmonth" name="fmonth" placeholder="10" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="fyear">Year</label>
-                                <input type="number" id="fyear" name="fyear" min="1900" max="2099" placeholder="2005" required>
+                                <input type="number" id="fyear" name="fyear" placeholder="2005" required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="fhour">Hour</label> <br>
-                                <input type="number" id="fhour" name="fhour" min="1" max="23" placeholder="8" required>
+                                <input type="number" id="fhour" name="fhour" placeholder="8" required>
                             </div>
                             
                             <div class="form-group"> 
                                 <label for="fmin">Minute</label>
-                                <input type="number" id="fmin" name="fmin" min="0" max="59" placeholder="30" required>
+                                <input type="number" id="fmin" name="fmin" placeholder="30" required>
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="flocation">City</label>
-                                <input type="text" id="flocation" name="flocation" placeholder="ex. Ahmedabad, Gujarat, India" onkeyup="f_lat_lon()">
+                                <input type="text" id="flocation" name="flocation" 
+                                placeholder="ex. Ahmedabad, Gujarat, India" onkeyup="f_lat_lon()">
                             </div>
                         </div>
                         
@@ -187,10 +194,10 @@
                         <input type="hidden" id="ftzone" name="ftzone" required>
                         </div>
                     </div>      
-                </div>          
+                </div>      
                 <input type="submit" class="form-btn" value="Match Kundli"> </div>
             </form>
-        <!-- </div> -->
+        <!-- <div id="errorMessages"></div> -->
     </div>
 
     <!-- Result Show -->
@@ -203,13 +210,13 @@
     
     <!-- CRUD File -->
     <script src="./crud/c_kundli_matching.js"></script>
-
+    
 <script>
     //male- Get Latitude & Longitude using geo-location
     $(document).ready(function () {
         var autocomplete;
 
-        autocomplete = new google.maps.places.Autocomplete((document.getElementById('mlocation')),
+        autocomplete = new google.maps.places.Autocomplete((document.getElementById('location')),
             {
                 types: ['geocode'],
             });
@@ -234,12 +241,12 @@
     });
 
     // male location
-    function m_lat_lon() {
+    function lat_lon() {
         // Create a geocoder object
         const geocoder = new google.maps.Geocoder();
 
         // Define the address you want to geocode
-        const address = (document.getElementById("mlocation").value);
+        const address = (document.getElementById("location").value);
         // console.log(address);
         
         // Perform geocoding
@@ -253,10 +260,10 @@
                 // console.log('male Latitude:', latitude);
                 // console.log('male Longitude:', longitude);
 
-                const lan_send = document.getElementById("mlat");
+                const lan_send = document.getElementById("lat");
                 lan_send.value = latitude;
 
-                const lon_send = document.getElementById("mlon");
+                const lon_send = document.getElementById("lon");
                 lon_send.value = longitude;
             }
             // else
@@ -299,5 +306,16 @@
         });
     }
 </script>
+<!-- My Validation -->
+<script src="./js/validation.js"></script>
+<!-- jQuery -->
+<script src="js/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="js/dist/adminlte.min.js"></script>
+<!-- jquery-validation -->
+<script src="js/jquery-validation/jquery.validate.min.js"></script>
+<script src="js/jquery-validation/additional-methods.min.js"></script>
 </body>
 </html>

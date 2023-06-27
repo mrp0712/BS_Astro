@@ -32,8 +32,8 @@ const r_today_panchag_Router = require('./routes/r_today_panchang')
 app.use('/r_today_panchang', r_today_panchag_Router)
 
 // Horoscope
-const r_horoscopeRouter = require('./routes/r_western_horoscope')
-app.use('/r_western_horoscope', r_horoscopeRouter)
+const r_horoscopeRouter = require('./routes/r_horoscope')
+app.use('/r_horoscope', r_horoscopeRouter)
 
 // Kundli Matching
 const r_kundli_matching_Router = require('./routes/r_kundli_matching')

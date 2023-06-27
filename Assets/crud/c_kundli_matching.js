@@ -8,13 +8,13 @@ event.preventDefault(); // Prevent form submission
   const now = new Date()
   
   const data = {
-    m_day: document.getElementById("mday").value,
-    m_month: document.getElementById("mmonth").value,
-    m_year: document.getElementById("myear").value,
-    m_hour: document.getElementById("mhour").value,
-    m_min: document.getElementById("mmin").value,
-    m_lat: document.getElementById("mlat").value,
-    m_lon: document.getElementById("mlon").value,
+    m_day: document.getElementById("day").value,
+    m_month: document.getElementById("month").value,
+    m_year: document.getElementById("year").value,
+    m_hour: document.getElementById("hour").value,
+    m_min: document.getElementById("min").value,
+    m_lat: document.getElementById("lat").value,
+    m_lon: document.getElementById("lon").value,
     m_tzone: now.getTimezoneOffset() / 60,
 
     f_day: document.getElementById("fday").value,
@@ -173,19 +173,19 @@ event.preventDefault(); // Prevent form submission
                           <td>${responseData.male_astro_details.Tithi}</td>
                         </tr>
                         <tr>
-                          <th>yunja</th>
+                          <th>Yunja</th>
                           <td>${responseData.male_astro_details.yunja}</td>
                         </tr>
                         <tr>  
-                          <th>tatva</th>
+                          <th>Tatva</th>
                           <td>${responseData.male_astro_details.tatva}</td>
                         </tr>
                         <tr>
-                          <th>name_alphabet</th>
+                          <th>Name Alphabet</th>
                           <td>${responseData.male_astro_details.name_alphabet}</td>
                         </tr>
                         <tr>                            
-                          <th>paya</th>
+                          <th>Paya</th>
                           <td>${responseData.male_astro_details.paya}</td>
                         </tr>                          
                     </table>
@@ -225,7 +225,7 @@ event.preventDefault(); // Prevent form submission
                           <td>${responseData.female_astro_details.SignLord}</td>
                         </tr>  
                         <tr>
-                          <th>sign</th>
+                          <th>Sign</th>
                           <td>${responseData.female_astro_details.sign}</td>
                         </tr>
                         <tr>
@@ -233,7 +233,7 @@ event.preventDefault(); // Prevent form submission
                           <td>${responseData.female_astro_details.Naksahtra}</td>
                         </tr>
                         <tr>  
-                          <th>NaksahtraLord</th>
+                          <th>Naksahtra Lord</th>
                           <td>${responseData.female_astro_details.NaksahtraLord}</td>
                         </tr>
                         <tr>
@@ -253,19 +253,19 @@ event.preventDefault(); // Prevent form submission
                           <td>${responseData.female_astro_details.Tithi}</td>
                         </tr>
                         <tr>
-                          <th>yunja</th>
+                          <th>Yunja</th>
                           <td>${responseData.female_astro_details.yunja}</td>
                         </tr>
                         <tr>  
-                          <th>tatva</th>
+                          <th>Tatva</th>
                           <td>${responseData.female_astro_details.tatva}</td>
                         </tr>
                         <tr>
-                          <th>name_alphabet</th>
+                          <th>Name Alphabet</th>
                           <td>${responseData.female_astro_details.name_alphabet}</td>
                         </tr>
                         <tr>                            
-                          <th>paya</th>
+                          <th>Paya</th>
                           <td>${responseData.female_astro_details.paya}</td>
                         </tr>                          
                     </table>
