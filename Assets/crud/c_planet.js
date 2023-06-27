@@ -6,7 +6,6 @@ event.preventDefault(); // Prevent form submission
   const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
  
   const now = new Date()
-
   const data = {
     day: now.getDate(),
     month: now.getMonth() + 1,
@@ -19,7 +18,7 @@ event.preventDefault(); // Prevent form submission
   }
 
   const auth = "Basic " + btoa(userId + ":" + apiKey);
-  console.log(data);
+  // console.log(data)
 
   fetch("https://json.astrologyapi.com/v1/" + api, {
     method: "POST",
@@ -34,11 +33,11 @@ event.preventDefault(); // Prevent form submission
         throw new Error("API request failed. Status: " + response.status);
       }
       const res = response.json();
-      console.log(res)
+      // console.log(res)
       return res;
     })
     .then(function (responseData) {
-      console.log(responseData);
+      // console.log(responseData)
       fetch("http://localhost:8080/r_planet", {
         method: "POST",
         headers: {
@@ -51,11 +50,11 @@ event.preventDefault(); // Prevent form submission
           throw new Error("API request failed. Status: " + response.status);
         }
         const res = response.json();
-        console.log(res)
+        // console.log(res)
         return res;
       })
       .then(function (responseData) {
-        console.log(responseData);
+        // console.log(responseData);
 
         let tabledata = "";
         let daydata = "";
@@ -178,12 +177,10 @@ event.preventDefault(); // Prevent form submission
                     </div>`
         // console.log(tabledata)
         document.getElementById("table_body").innerHTML = tabledata;
-
       })
       .catch(function (error) {
         console.log(error);
       })
-
   })
   .catch(function (error) {
     console.log(error);

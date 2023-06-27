@@ -6,7 +6,6 @@ const userId = "624429";
 const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
 
   const now = new Date()
-
   const data = {
     day: now.getDate(),
     month: now.getMonth() + 1,
@@ -17,7 +16,7 @@ const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
     lon: document.getElementById("lon").value,
     tzone: now.getTimezoneOffset() / 60
   };
-  //var auth = "Basic " + new Buffer(userId + ":" + apiKey).toString("base64");
+
   const auth = "Basic " + btoa(userId + ":" + apiKey);
   console.log(data);
   fetch("https://json.astrologyapi.com/v1/" + api, {
@@ -36,7 +35,7 @@ const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
       return res;
     })
     .then(function (responseData) {
-      console.log(responseData);
+      // console.log(responseData);
       fetch("http://localhost:8080/r_today_panchang", {
         method: "POST",
         headers: {
@@ -52,11 +51,9 @@ const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
           return res;
         })
         .then(function (responseData) {
-          console.log(responseData);
-          console.log(responseData.tithi)
+          // console.log(responseData);
 
           let tabledata = "";
-        
             tabledata = `<div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
                   <div class="small-container">
                     <h2 class="title"style="margin:0 15px;">Today Panchang Details</h2>

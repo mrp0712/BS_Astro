@@ -6,7 +6,6 @@ event.preventDefault(); // Prevent form submission
   const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
   
   const now = new Date()
-  
   const data = {
     m_day: document.getElementById("day").value,
     m_month: document.getElementById("month").value,
@@ -28,7 +27,7 @@ event.preventDefault(); // Prevent form submission
   };
 
   const auth = "Basic " + btoa(userId + ":" + apiKey);
-  console.log(data);
+  // console.log(data)
 
   fetch("https://json.astrologyapi.com/v1/" + api, {
     method: "POST",
@@ -47,7 +46,7 @@ event.preventDefault(); // Prevent form submission
       return res;
     })
     .then(function (responseData) {
-      console.log(responseData);
+      // console.log(responseData)
       fetch("http://localhost:8080/r_kundli_matching", {
         method: "POST",
         headers: {
@@ -63,51 +62,10 @@ event.preventDefault(); // Prevent form submission
           return res;
         })
         .then(function (responseData) {
-          console.log(responseData);
+          // console.log(responseData)
           
-          let tabledata =
-              // ` <div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
-              //     <div class="small-container">
-              //       <h2 class="title"style="margin:0 15px;">Kundli Matching</h2>
-              //       <div class="row">
-              //         <table>
-              //           <tr>
-              //             <th>Day</th>
-              //             <td>${responseData.day}</td>
-              //           </tr>
-              //           <tr>
-              //             <th>Month</th>
-              //             <td>${responseData.month}</td>
-              //           </tr>
-              //           <tr>
-              //             <th>Year</th>
-              //             <td>${responseData.year}</td>
-              //           </tr>
-              //           <tr>
-              //             <th>Hour</th>
-              //             <td>${responseData.hour}</td>
-              //           </tr>
-              //           <tr>
-              //             <th>Min</th>
-              //             <td>${responseData.min}</td>
-              //           </tr>
-              //           <tr>
-              //             <th>Lat</th>
-              //             <td>${responseData.lat}</td>
-              //           </tr>
-              //           <tr>
-              //             <th>Lon</th>
-              //             <td>${responseData.lon}</td>
-              //           </tr>
-              //           <tr>
-              //             <th>Timezone</th>
-              //             <td>${responseData.tzone}</td>
-              //           </tr>
-              //         </table>
-              //       </div>
-              //     </div>
-              //   </div>        
-      ` <div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
+          let tabledata =       
+      ` <div class="review" style="background: radial-gradient(#fff,#A9A9A9); padding-left:40px">
           <div class="small-container">
             <div class="row" style="flex-wrap:none;">
                 
@@ -273,7 +231,7 @@ event.preventDefault(); // Prevent form submission
             </div>
         </div>
     </div>`
-          
+
           // console.log(tabledata)
           document.getElementById("table_body").innerHTML = tabledata;
 

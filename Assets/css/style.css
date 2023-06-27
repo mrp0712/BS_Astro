@@ -102,7 +102,7 @@ p{
 .small-container{
     max-width: 100%;
     margin: auto;
-    padding: 0 25px;
+    /* padding: 0 0x; */
     
 }
 .col-4{
@@ -171,6 +171,7 @@ h4{
     cursor: pointer;
     transition: transform 0.5s;
     height: 310px;
+    border-radius: 7%;
 }
 .review .col-4 img{
     height: 80px;

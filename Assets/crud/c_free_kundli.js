@@ -5,8 +5,6 @@ event.preventDefault(); // Prevent form submission
   const userId = "624429";
   const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
   
-  const now = new Date()
-
   const data = {
     day: document.getElementById("day").value,
     month: document.getElementById("month").value,
@@ -19,7 +17,7 @@ event.preventDefault(); // Prevent form submission
   };
 
   const auth = "Basic " + btoa(userId + ":" + apiKey);
-  console.log(data);
+  // console.log(data)
 
   fetch("https://json.astrologyapi.com/v1/" + api, {
     method: "POST",
@@ -53,7 +51,7 @@ event.preventDefault(); // Prevent form submission
           return res;
         })
         .then(function (responseData) {
-          console.log(responseData);
+          // console.log(responseData)
 
           // Print data
           let tabledata = "";
@@ -142,37 +140,3 @@ event.preventDefault(); // Prevent form submission
       console.log(error);
     });
 });
-
-
-                    // <tr>
-                    //   <th>Day</th>
-                    //   <td>${responseData.day}</td>
-                    // </tr>
-                    // <tr>
-                    //   <th>Month</th>
-                    //   <td>${responseData.month}</td>
-                    // </tr>
-                    // <tr>
-                    //   <th>Year</th>
-                    //   <td>${responseData.year}</td>
-                    // </tr>
-                    // <tr>
-                    //   <th>Hour</th>
-                    //   <td>${responseData.hour}</td>
-                    // </tr>
-                    // <tr>
-                    //   <th>Min</th>
-                    //   <td>${responseData.min}</td>
-                    // </tr>
-                    // <tr>
-                    //   <th>Latitude</th>
-                    //   <td>${responseData.lat}</td>
-                    // </tr>
-                    // <tr>
-                    //   <th>Longitude</th>
-                    //   <td>${responseData.lon}</td>
-                    // </tr>
-                    // <tr>
-                    //   <th>Timezone</th>
-                    //   <td>${responseData.tzone}</td>
-                    // </tr>

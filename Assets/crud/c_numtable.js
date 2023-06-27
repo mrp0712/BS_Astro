@@ -13,8 +13,8 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
   };
 
   const auth = "Basic " + btoa(userId + ":" + apiKey);
-
-  console.log(data);
+  // console.log(data)
+  
   fetch("https://json.astrologyapi.com/v1/" + api, {
     method: "POST",
     headers: {
@@ -31,7 +31,8 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
       return res;
     })
     .then(function (responseData) {
-      console.log(responseData);
+      // console.log(responseData)
+
       fetch("http://localhost:8080/r_numtable", {
         method: "POST",
         headers: {
@@ -47,7 +48,7 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
           return res;
         })
         .then(function (responseData) {
-          console.log(responseData);
+          // console.log(responseData)
 
           
           // Show result in HTML 
@@ -133,9 +134,8 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
           // console.log(tabledata)
           document.getElementById("table_body").innerHTML = tabledata;
         })
-
-        });
+      });
     })
     .catch(function (error) {
       console.log(error);
-    });
+});

@@ -6,7 +6,6 @@ event.preventDefault(); // Prevent form submission
   const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
 
   const now = new Date()
-
   const data = {
     day: now.getDate(),
     month: now.getMonth() + 1,
@@ -34,11 +33,11 @@ event.preventDefault(); // Prevent form submission
         throw new Error("API request failed. Status: " + response.status);
       }
       const res = response.json();
-      console.log(res)
+      // console.log(res)
       return res;
     })
     .then(function (responseData) {
-      console.log(responseData);
+      // console.log(responseData)
       fetch("http://localhost:8080/r_chaughadiya_muhurta", {
         method: "POST",
         headers: {
@@ -51,11 +50,10 @@ event.preventDefault(); // Prevent form submission
             throw new Error("API request failed. Status: " + response.status);
           }
           const res = response.json();
-          console.log(res)                  // print
+          // console.log(res)
           return res;
         })
         .then(function (responseData) {
-
           console.log(responseData);
           // console.log(responseData.)
           
@@ -80,8 +78,7 @@ event.preventDefault(); // Prevent form submission
                   `
           });
           
-            tabledata = `
-            
+          tabledata = `            
         <div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
           <div class="small-container">
             <div class="row" style="flex-wrap:none;">
@@ -112,60 +109,14 @@ event.preventDefault(); // Prevent form submission
             </div>
         </div>
     </div>`
-          
           // console.log(tabledata)
           document.getElementById("table_body").innerHTML = tabledata;
-
         })
         .catch(function (error) {
           console.log(error);
-        })
-          
+        })  
     })
     .catch(function (error) {
       console.log(error);
     })
-  });
-
-  
-  // <div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
-  //                 <div class="small-container">
-  //                   <h2 class="title"style="margin:0 15px;">Chaughadiya Muhurta</h2>
-  //                   <div class="row">
-  //                     <table>
-  //                       <tr>
-  //                         <th>Day</th>
-  //                         <td>${responseData.day}</td>
-  //                       </tr>
-  //                       <tr>
-  //                         <th>Month</th>
-  //                         <td>${responseData.month}</td>
-  //                       </tr>
-  //                       <tr>
-  //                         <th>Year</th>
-  //                         <td>${responseData.year}</td>
-  //                       </tr>
-  //                       <tr>
-  //                         <th>Hour</th>
-  //                         <td>${responseData.hour}</td>
-  //                       </tr>
-  //                       <tr>
-  //                         <th>Min</th>
-  //                         <td>${responseData.min}</td>
-  //                       </tr>
-  //                       <tr>
-  //                         <th>Lat</th>
-  //                         <td>${responseData.lat}</td>
-  //                       </tr>
-  //                       <tr>
-  //                         <th>Lon</th>
-  //                         <td>${responseData.lon}</td>
-  //                       </tr>
-  //                       <tr>
-  //                         <th>Timezone</th>
-  //                         <td>${responseData.tzone}</td>
-  //                       </tr>
-  //                     </table>
-  //                   </div>
-  //                 </div>
-  //               </div>        
+  })
