@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Kundli </title>
+    <link rel="icon" type="image/x-icon" href="./images/icon/title_icon.png">
     <link src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" />
 
@@ -26,8 +27,8 @@
         <style>
             table {
                 border-collapse: collapse;
-                margin: 20px 20px;
-                 width: 790px;
+                margin: 10px 10px 10px 10px;
+                 width: 580px;
                 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             }
     
@@ -35,8 +36,7 @@
             th {
                 border: 1px solid black;
                 padding: 8px;
-                background-color: #C0C0C0;
-    
+                background-color: #c0c0c040;
             }
         </style>
 </head>
@@ -67,7 +67,22 @@
             </div>
         </div>
     </div>
-    <img src="./images/astrology_banner.jpg" width="100%" height="350px">
+    <div class="first" style="height: 300px;background: radial-gradient(#f8dddd,#5a9dc5);">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-2" style=" padding-left: 90px;">
+                <div class="title" style="color: black;">
+                    <h1><b> Free Kundli </b> </h1>
+                </div>
+                  <h2 style="text-align: center; color: #35355f;">Get instant & Accurate, Janam Kundli</h2>
+                
+            </div>
+            <div class="col-2">
+                <img src="./images/icon/poster_kundali.png" width="30%" height="90%"  style="margin-left: 55%;padding-top: 8%;"   >
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Kundli Matching form -->
 <div class="panchang">
@@ -77,8 +92,8 @@
                     <div class="row" style="width: 100%; background-color: lightgrey;">
                     
                     <!-- Male -->
-                    <div class="col-2" style="height:370px; width:550px; align-content: left; display: inline-block;">
-                        <div class="form-container" style="width: 400px;">
+                    <div class="col-2" style="height:auto; min-width:auto; align-content: left; display: inline-block;">
+                        <div class="form-container" style="width: 500px;">
                         
                         <div class="form-title">
                            <label> Free Kundli</label>
@@ -86,36 +101,59 @@
                        
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="day">Date</label> <br>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" class="form-control" name="name" placeholder="Enter Name">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select name="gender" id="gender" class="form-control select2bs4">
+                                    <option value="" Selected> Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="day"> Birth Day</label> <br>
                                 <input type="number" id="day" name="day" class="form-control" placeholder="20" required>
                             </div>
                     
                             <div class="form-group">
-                                <label for="month">Month</label>
+                                <label for="month">Birth Month</label>
                                 <input type="number" id="month" name="month" class="form-control" placeholder="10" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="year">Year</label>
+                                <label for="year">Birth Year</label>
                                 <input type="number" id="year" name="year" class="form-control" placeholder="2005" required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="hour">Hour</label> <br>
+                                <label for="hour">Birth Hour</label> <br>
                                 <input type="number" id="hour" class="form-control" name="hour" placeholder="8" required>
                             </div>
                             
                             <div class="form-group"> 
-                                <label for="min">Minute</label>
+                                <label for="min">Birth Minute</label>
                                 <input type="number" id="min" class="form-control" name="min" placeholder="30" required>
+                            </div>
+
+                            <div class="form-group"> 
+                                <label for="sec">Birth Second</label>
+                                <input type="number" id="sec" class="form-control" name="sec" placeholder="45" required>
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="location">City</label>
+                                <label for="location">Birth Place</label>
                                 <input type="text" id="location" class="form-control" name="location" placeholder="ex. Ahmedabad, Gujarat, India" onkeyup="lat_lon()">
                             </div>
                         </div>
@@ -141,7 +179,9 @@
 </div>
 
     <!-- Result Show -->
-    <div id="table_body"></div>
+    <div id="basic_output"></div>
+    <!-- <div id="kundli_output"></div> -->
+
 
     <!-- Footer Side-->
     <div class="footer">
@@ -150,25 +190,29 @@
 
     <!-- CRUD File -->
     <script src="./crud/c_free_kundli.js"></script>
+    <!-- <script src="./crud/c_free_kundli2.js"></script> -->
 
 <script>
     // Form Data
      const now = new Date()
 
-    const day = document.getElementById('day')
-    day.value = now.getDate()
+    // const day = document.getElementById('day')
+    // day.value = now.getDate()
 
-    const month = document.getElementById('month')
-    month.value = now.getMonth() + 1
+    // const month = document.getElementById('month')
+    // month.value = now.getMonth() + 1
 
-    const year = document.getElementById('year')
-    year.value = now.getFullYear();
+    // const year = document.getElementById('year')
+    // year.value = now.getFullYear();
 
-    const hour = document.getElementById('hour')
-    hour.value = now.getHours();
+    // const hour = document.getElementById('hour')
+    // hour.value = now.getHours();
 
-    const min = document.getElementById('min')
-    min.value = now.getMinutes();
+    // const min = document.getElementById('min')
+    // min.value = now.getMinutes();
+
+    // const sec = document.getElementById('sec')
+    // sec.value = now.getSeconds();
 
     const tzone = document.getElementById('tzone')
     tzone.value = now.getTimezoneOffset() / 60;
@@ -230,7 +274,7 @@
     <script src="js/jquery/jquery.min.js"></script>
     
     <!-- Bootstrap 4 -->
-    <script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap/bootstrap.bundle.js"></script>
     
     <!-- AdminLTE App -->
     <script src="js/dist/adminlte.min.js"></script>

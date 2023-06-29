@@ -7,6 +7,15 @@ $(function () {
     
     $('#myForm').validate({
       rules: {
+        name:
+        {
+          required: true,
+          minlength: 3
+        },
+        gender:
+        {
+          required: true
+        },
         day: {
           required: true,
           min: 1,
@@ -29,6 +38,11 @@ $(function () {
           max:23
         },
         min: {
+          required: true,
+          min: 0,
+          max:59
+        },
+        sec: {
           required: true,
           min: 0,
           max:59
@@ -73,6 +87,14 @@ $(function () {
 
     // messages
       messages: {
+        name: {
+          required: "Please enter name.",
+          minlength: "Minimum length of name is 3."
+
+        },
+        gender: {
+          required: "Please select gender."
+        },
         day: {
           required: "Please enter date.",
         //   min: "Minimum date is 1.",
@@ -95,6 +117,11 @@ $(function () {
         },
         min: {
           required: "Please enter minute.",
+        //   min: "Minimum length is 0.",
+        //   max: "Maximum length is 59."
+        },
+        sec: {
+          required: "Please enter second.",
         //   min: "Minimum length is 0.",
         //   max: "Maximum length is 59."
         },
