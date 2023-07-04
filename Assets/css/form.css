@@ -79,7 +79,11 @@ input[type="number"]{
     color: white;
     border: none;
     font-size: large;
+<<<<<<< HEAD
     width: 450px;
+=======
+    width: 480px;
+>>>>>>> 1ee315f5464303ac6daae86571ab53238688914a
   }
 
   .form-btn{
@@ -96,7 +100,11 @@ input[type="number"]{
 }
   
   .form-btn:hover {
+<<<<<<< HEAD
     background-color: #aab4cf;
+=======
+    background-color: #134e16;
+>>>>>>> 1ee315f5464303ac6daae86571ab53238688914a
   }  
   select{
     width: 480px;
