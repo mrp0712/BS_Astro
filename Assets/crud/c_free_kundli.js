@@ -362,8 +362,7 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                 </div>
               </div>
             </div>
-          </div>
-          
+          </div>          
 
               <div id="div5" class="content hidden">
                 <div class="row">
@@ -388,5 +387,4 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
       .catch(function (error) {
         console.log(error);
       })
-      
     // })
