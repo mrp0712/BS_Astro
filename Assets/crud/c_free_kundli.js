@@ -46,7 +46,6 @@ function convertSvgToJpg(svgData, backgroundColor) { // convert image
 
 document.getElementById("myForm").addEventListener("submit", async (event) => {
   event.preventDefault(); // Prevent form submission
-<<<<<<< HEAD
 
   const api = "astro_details";
   const userId = "624429";
@@ -193,69 +192,6 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
 
         <div id="div1" class="content hidden">
             <div class="row">
-=======
-  
-    const api = "astro_details";
-    const userId = "624429";
-    const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
-    
-    const data = {
-      day: document.getElementById("day").value,
-      month: document.getElementById("month").value,
-      year: document.getElementById("year").value,
-      hour: document.getElementById("hour").value,
-      min: document.getElementById("min").value,
-      lat: document.getElementById("lat").value,
-      lon: document.getElementById("lon").value,
-      tzone: document.getElementById("tzone").value
-    };
-  
-    const auth = "Basic " + btoa(userId + ":" + apiKey);
-    // console.log(data)
-  
-    fetch("https://json.astrologyapi.com/v1/" + api, {
-      method: "POST",
-      headers: {
-        Authorization: auth,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then(function (response) {
-        if (!response.ok) {
-          throw new Error("API request failed. Status: " + response.status);
-        }
-        const res = response.json();
-        return res;
-      })
-      .then(function (responseData) {
-        console.log(responseData);
-        fetch("http://localhost:8080/r_free_kundli", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ ...data, ...responseData }),
-        })
-          .then(function (response) {
-            if (!response.ok) {
-              throw new Error("API request failed. Status: " + response.status);
-            }
-            const res = response.json();
-            return res;
-          })
-          .then(function (responseData) {
-            // console.log(responseData)
-  
-            // Print data
-            let basic_output = "";
-            // let kundli_output = "";
-  
-          basic_output = `
-          <div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
-          <div class="small-container">
-            <div class="row" style="flex-wrap:wrap;">
->>>>>>> 1ee315f5464303ac6daae86571ab53238688914a
                 <div class="col-2" style="flex-wrap: wrap;">
                     <div class="title" style = "margin:0 10px;">
                         <h4><b> Basic Details </b> </h4>
@@ -275,11 +211,7 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                       </tr>
                       <tr>
                         <th>Month</th>
-<<<<<<< HEAD
                         <td>${responseData.month}</td>
-=======
-                        <td>${responseData.mon}</td>
->>>>>>> 1ee315f5464303ac6daae86571ab53238688914a
                       </tr>
                       <tr>
                         <th>Year</th>
@@ -314,7 +246,6 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                         <td>GMT ${responseData.tzone}</td>
                       </tr>
                       <tr>
-<<<<<<< HEAD
                         <th>Tithi</th>
                         <td>${responseData.Tithi}</td>
                       </tr>
@@ -325,17 +256,6 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                     </table>
                     </div>
 
-=======
-                        <th>ayanamsha</th>
-                        <td>${responseData.day}</td>
-                      </tr>
-                      <tr>
-                        <th>sunrise</th>
-                        <td>${responseData.day}</td>
-                      </tr>
-                    </table>
-                    </div>
->>>>>>> 1ee315f5464303ac6daae86571ab53238688914a
                     <div class="col-2">
                       <div class="title" style="margin:0 10px;">
                         <h4><b> Avakhada Details </b> </h4>
@@ -378,13 +298,6 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                         <td>${responseData.sign}</td>
                       </tr>
                       <tr>
-<<<<<<< HEAD
-=======
-                        <th>Naksahtra</th>
-                        <td>${responseData.Naksahtra}</td>
-                      </tr>
-                      <tr>
->>>>>>> 1ee315f5464303ac6daae86571ab53238688914a
                         <th>NaksahtraLord</th>
                         <td>${responseData.NaksahtraLord}</td>
                       </tr>
@@ -401,19 +314,11 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                         <td>${responseData.Karan}</td>
                       </tr>
                       <tr>
-<<<<<<< HEAD
-=======
-                        <th>Tithi</th>
-                        <td>${responseData.Tithi}</td>
-                      </tr>
-                      <tr>
->>>>>>> 1ee315f5464303ac6daae86571ab53238688914a
                         <th>Yunja</th>
                         <td>${responseData.yunja}</td>
                       </tr>
                     </table>
                   </div>
-<<<<<<< HEAD
                 </div>
               </div>
 
@@ -484,20 +389,3 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
         console.log(error);
       })
     // })
-=======
-                </div>
-              </div>
-            </div>`
-            // console.log(basic_output)
-            document.getElementById("basic_output").innerHTML = basic_output;
-         
-            })
-          .catch(function (error) {
-            console.log(error);
-          });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  });
->>>>>>> 1ee315f5464303ac6daae86571ab53238688914a
