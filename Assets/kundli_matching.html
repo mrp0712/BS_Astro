@@ -18,26 +18,12 @@
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
         <link rel="Stylesheet" href="./css/style.css">
         <link rel="Stylesheet" href="./css/form.css">
+        <link rel="Stylesheet" href="./css/table.css">
+        <link rel="Stylesheet" href="./css/breadcrumb.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-        <style>
-            table {
-                border-collapse: collapse;
-                margin: 20px 20px;
-                width: 500px;
-                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
-                text-align: center;
-            }
-    
-            td,
-            th {
-                border: 1px solid black;
-                padding: 8px;
-                background-color: #C0C0C0;
-    
-            }
         </style>
 </head>
 
@@ -65,8 +51,31 @@
             </div>
         </div>
     </div>
-    <img src="./images/astrology_banner.jpg" width="100%" height="350px">
+    <div class="first" style="height: 300px;background: radial-gradient(#f8dddd,#5a9dc5);">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2" style=" padding-left: 90px;">
+                    <div class="title" style="color: black;">
+                        <h1><b>Kundli Matching</b> </h1>
+                    </div>
+                      <h2 style="text-align: center; color: #35355f;">Find your right one, through Matchmaking</h2>
+                    
+                </div>
+                <div class="col-2">
+                    <img src="./images/icon/poster_match_kundali.png" width="30%" height="90%"  style="margin-left: 55%;padding-top: 8%;"   >
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <section style="padding-top: inherit; background-color: #e9e6e6; padding-bottom:4.5%; padding: 0% 0% 0% 0%">
+        <nav>
+            <ol class="cd-breadcrumb triangle">
+                <li><a href="./index.html">Home</a></li>
+                <li class="current"><em>Kundli Matching</em></li>
+            </ol>
+        </nav>
+    </section>
 
     <!-- Kundli Matching form -->
     <div class="panchang">
@@ -76,39 +85,56 @@
                         <div class="row" style="width: 100%; background-color: lightgrey;">
                         
                         <!-- Male -->
-                        <div class="col-2" style="height:350px; width:550px; align-content: left; display: inline-block;">
-                            <div class="form-container" style="width: 400px;">
+                        <div class="col-2" style="height:auto;width:550px;align-content: left;margin-left: -105px;">
+                            <div class="form-container" style="width: 500px;">
                             
                             <div class="form-title">
                                <label> Male Details</label>
                             </div>
-                           
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" class="form-control" value="Harish" name="name" placeholder="Enter Name">
+                                </div>
+                            </div>
+    
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="gender">Gender</label>
+                                    <select name="gender" id="gender" class="form-control select2bs4">
+                                        <option value="" > Select Gender</option>
+                                        <option value="Male" Selected>Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+    
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="day">Date</label> <br>
-                                    <input type="number" id="day" name="day" class="form-control" placeholder="20" required>
+                                    <input type="number" id="day" name="day" value="10" class="form-control" placeholder="20" required>
                                 </div>
                         
                                 <div class="form-group">
                                     <label for="month">Month</label>
-                                    <input type="number" id="month" name="month" class="form-control" placeholder="10" required>
+                                    <input type="number" id="month" name="month" value="5" class="form-control" placeholder="10" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="year">Year</label>
-                                    <input type="number" id="year" name="year" class="form-control" placeholder="2005" required>
+                                    <input type="number" id="year" name="year" value="2005" class="form-control" placeholder="2005" required>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="hour">Hour</label> <br>
-                                    <input type="number" id="hour" class="form-control" name="hour" placeholder="8" required>
+                                    <input type="number" id="hour" class="form-control" value="9" name="hour" placeholder="8" required>
                                 </div>
                                 
                                 <div class="form-group"> 
                                     <label for="min">Minute</label>
-                                    <input type="number" id="min" class="form-control" name="min" placeholder="30" required>
+                                    <input type="number" id="min" class="form-control" value="45" name="min" placeholder="30" required>
                                 </div>
                             </div>
                             
@@ -132,39 +158,57 @@
                         </div>
 
                     <!-- Female -->
-                    <div class="col-2" style="height:350px; width:550px; align-content: left; display: inline-block;">
-                        <div class="form-container" style="width: 400px;">
+
+                    <div class="col-2" style="height:auto; width:550px; align-content: right; display: inline-block;">
+                        <div class="form-container" style="width: 500px; margin-left: -10%;">
                         
                         <div class="form-title">
                            <label> Female Details</label>
                         </div>
-                       
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fname">Name</label>
+                                <input type="text" id="fname" class="form-control" value="Smriti" name="fname" placeholder="Enter Name">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fgender">Gender</label>
+                                <select name="fgender" id="fgender" class="form-control select2bs4">
+                                    <option value=""> Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female" Selected>Female</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="fday">Date</label> <br>
-                                <input type="number" id="fday" name="fday" placeholder="20"  required>
+                                <input type="number" id="fday" name="fday" value="18" placeholder="20"  required>
                             </div>
                     
                             <div class="form-group">
                                 <label for="fmonth">Month</label>
-                                <input type="number" id="fmonth" name="fmonth" placeholder="10" required>
+                                <input type="number" id="fmonth" name="fmonth" value="7" placeholder="10" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="fyear">Year</label>
-                                <input type="number" id="fyear" name="fyear" placeholder="2005" required>
+                                <input type="number" id="fyear" name="fyear" value="1997" placeholder="2005" required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="fhour">Hour</label> <br>
-                                <input type="number" id="fhour" name="fhour" placeholder="8" required>
+                                <input type="number" id="fhour" name="fhour" value="3" placeholder="8" required>
                             </div>
                             
                             <div class="form-group"> 
                                 <label for="fmin">Minute</label>
-                                <input type="number" id="fmin" name="fmin" placeholder="30" required>
+                                <input type="number" id="fmin" name="fmin" value="29" placeholder="30" required>
                             </div>
                         </div>
                         
@@ -193,6 +237,7 @@
 
     <!-- Result Show -->
     <div id="table_body"></div>
+    <div id="table_body2"></div>
 
     <!-- Footer -->
     <div class="footer">
@@ -302,7 +347,7 @@
 <!-- jQuery -->
 <script src="js/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/bootstrap/bootstrap.bundle.js"></script>
 <!-- AdminLTE App -->
 <script src="js/dist/adminlte.min.js"></script>
 <!-- jquery-validation -->

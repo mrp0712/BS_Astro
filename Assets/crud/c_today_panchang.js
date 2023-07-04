@@ -36,26 +36,43 @@ const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
     })
     .then(function (responseData) {
       // console.log(responseData);
-      fetch("http://localhost:8080/r_today_panchang", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...data, ...responseData }),
-      })
-        .then(function (response) {
-          if (!response.ok) {
-            throw new Error("API request failed. Status: " + response.status);
-          }
-          const res = response.json();
-          return res;
-        })
-        .then(function (responseData) {
+      // fetch("http://localhost:8080/r_today_panchang", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({ ...data, ...responseData }),
+      // })
+      //   .then(function (response) {
+      //     if (!response.ok) {
+      //       throw new Error("API request failed. Status: " + response.status);
+      //     }
+      //     const res = response.json();
+      //     return res;
+      //   })
+      //   .then(function (responseData) {
           // console.log(responseData);
 
           let tabledata = "";
-            tabledata = `<div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
+            tabledata = `<div class="review" style="background:radial-gradient(#cfcfcf,#A9A9A9);">
                   <div class="small-container">
+                    <div class="row" style="flex-wrap:none;">      
+                    
+                    <div class="col-2">
+                        <div class="title" style = "margin:0 10px 10px 10px;">
+                          <h3><b> Sunrise <br>
+                            ${responseData.sunrise} </b> </h3>
+                          </div>
+                      </div>
+                  
+                      <div class="col-2">
+                        <div class="title" style = "margin:0 10px;">
+                          <h3><b> Sunset <br>
+                              ${responseData.sunset} </b> </h3>
+                            </div>
+                          </div>
+                  </div>
+
                     <h2 class="title"style="margin:0 15px;">Today Panchang Details</h2>
                     <div class="row">
                       <table>
@@ -137,4 +154,4 @@ const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
     .catch(function (error) {
       console.log(error);
     })
-})
+// })

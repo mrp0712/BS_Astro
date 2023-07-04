@@ -38,24 +38,23 @@ event.preventDefault(); // Prevent form submission
     })
     .then(function (responseData) {
       // console.log(responseData)
-      fetch("http://localhost:8080/r_chaughadiya_muhurta", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...data, ...responseData }),
-      })
-        .then(function (response) {
-          if (!response.ok) {
-            throw new Error("API request failed. Status: " + response.status);
-          }
-          const res = response.json();
-          // console.log(res)
-          return res;
-        })
-        .then(function (responseData) {
-          console.log(responseData);
-          // console.log(responseData.)
+      // fetch("http://localhost:8080/r_chaughadiya_muhurta", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({ ...data, ...responseData }),
+      // })
+      //   .then(function (response) {
+      //     if (!response.ok) {
+      //       throw new Error("API request failed. Status: " + response.status);
+      //     }
+      //     const res = response.json();
+      //     // console.log(res)
+      //     return res;
+      //   })
+      //   .then(function (responseData) {
+      //     console.log(responseData);
           
           let tabledata = "";
           let daydata = "";
@@ -66,7 +65,7 @@ event.preventDefault(); // Prevent form submission
                   <tr>
                       <td>${element.time}</td>
                       <td>${element.muhurta}</td>
-                  <tr>
+                  </tr>
                   `
           });
           responseData.chaughadiya.night.map((element) => {
@@ -74,41 +73,41 @@ event.preventDefault(); // Prevent form submission
                   <tr>
                       <td>${element.time}</td>
                       <td>${element.muhurta}</td>
-                  <tr>
+                  </tr>
                   `
           });
           
-          tabledata = `            
-        <div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
-          <div class="small-container">
-            <div class="row" style="flex-wrap:none;">
-                <div class="col-2">
-                    <div class="title" style = "margin:0 10px;">
-                        <h4><b> Day </b> </h4>
-                    </div>
-                    <table>
-                        <tr>
-                            <th>Time</th>
-                            <th>Muhurta</th>
-                        </tr>
-                        ${daydata}
-                    </table>
-                </div>
-                <div class="col-2">
-                    <div class="title" style="margin:0 10px;">
-                        <h4><b> Night </b> </h4>
-                    </div>
-                    <table>
-                        <tr>
-                            <th>Time</th>
-                            <th>Muhurta</th>
-                        </tr>
-                        ${nightdata}
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>`
+          tabledata = 
+          `<div class="review" style="background:radial-gradient(#cfcfcf,#A9A9A9);" padding-left:40px">
+              <div class="small-container">
+                  <div class="row" style="flex-wrap:none;">      
+                      <div class="col-2">
+                          <div class="title" style = "margin:0 10px;">
+                              <h4><b> Day </b> </h4>
+                          </div>
+                                      <table>
+                                          <tr>
+                                              <th>Time</th>
+                                              <th>Muhurta</th>
+                                         </tr>
+                                          ${daydata}
+                                      </table>
+                                 </div>
+                                  <div class="col-2">
+                                      <div class="title" style="margin:0 10px;">
+                                          <h4><b> Night </b> </h4>
+                                      </div>
+                                      <table>
+                                          <tr>
+                                              <th>Time</th>
+                                              <th>Muhurta</th>
+                                          </tr>
+                                          ${nightdata}
+                                     </table>
+                                 </div>
+                             </div>
+                          </div>
+                      </div>`
           // console.log(tabledata)
           document.getElementById("table_body").innerHTML = tabledata;
         })
@@ -119,4 +118,4 @@ event.preventDefault(); // Prevent form submission
     .catch(function (error) {
       console.log(error);
     })
-  })
+  // })

@@ -38,23 +38,24 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
       })
       .then(function (responseData) {
         console.log(responseData);
-        fetch("http://localhost:8080/r_horoscope", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ ...data, ...responseData }),
-        })
-          .then(function (response) {
-            if (!response.ok) {
-              throw new Error("API request failed. Status: " + response.status);
-            }
-            const res = response.json();
-            // console.log(res)
-            return res;
-          })
-          .then(function (responseData) {
-            console.log(responseData);
+        // fetch("http://localhost:8080/r_horoscope", {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        //   body: JSON.stringify({ ...data, ...responseData }),
+        // })
+        //   .then(function (response) {
+        //     if (!response.ok) {
+        //       throw new Error("API request failed. Status: " + response.status);
+        //     }
+        //     const res = response.json();
+        //     // console.log(res)
+        //     return res;
+        //   })
+        //   .then(function (responseData) {
+        //     console.log(responseData);
+
             let planetdata="";
             let tabledata = "";
             let housedata = "";
@@ -92,7 +93,7 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                         </tr>`
                       });
   
-            tabledata = `<div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
+            tabledata = `<div class="review" style="background:radial-gradient(#cfcfcf,#A9A9A9);">
                     <div class="small-container">
                       <h2 class="title"style="margin:0 15px;">Horoscope Details</h2>
                       <div class="row">
@@ -167,8 +168,8 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                     </div>
                   </div>
                   
-                  <div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
-                    <div class="small-container"style="padding: 1px 25px;">
+                  <div class="review" style="background:radial-gradient(#cfcfcf,#A9A9A9); margin-bottom: -1.7%;">
+                    <div class="small-container">
                       <div class="title"style="margin:0 15px; ">
                         <h4><b> Planets </b> </h4>
                       </div>
@@ -186,8 +187,8 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                       </table>
                     </div>
                   </div>
-                  <div class="review" style="background: radial-gradient(#fff,#A9A9A9);">
-                    <div class="small-container"style="padding: 1px 25px;">
+                  <div class="review" style="background:radial-gradient(#cfcfcf,#A9A9A9); margin-bottom: -1.7%; padding-bottom:2%">
+                    <div class="small-container">
                       <div class="title"style="margin:0 15px; ">
                         <h4><b> Aspects </b> </h4>
                       </div>
@@ -215,4 +216,4 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
       .catch(function (error) {
         console.log(error);
       })
-    });
+    // })
