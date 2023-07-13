@@ -43,6 +43,10 @@ app.use('/r_kundli_matching', r_kundli_matching_Router)
 const r_chaughadiyaRouter = require('./routes/r_chaughadiya_muhurta')
 app.use('/r_chaughadiya_muhurta', r_chaughadiyaRouter)
 
+// User Details
+const r_registerRouter = require('./routes/r_register')
+app.use('/r_register', r_registerRouter)
+
 // Display Port Number
 app.listen(port_no, () => {
     console.log(`Server running on port : ${port_no}`)

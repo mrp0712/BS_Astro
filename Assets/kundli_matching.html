@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kundli Matching</title>
+    <link rel="icon" type="image/x-icon" href="./images/icon/title_icon.png">
     <link src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" />
 
@@ -68,13 +69,15 @@
         </div>
     </div>
 
-    <section style="padding-top: inherit; background-color: #e9e6e6; padding-bottom:4.5%; padding: 0% 0% 0% 0%">
-        <nav>
-            <ol class="cd-breadcrumb triangle">
-                <li><a href="./index.html">Home</a></li>
-                <li class="current"><em>Kundli Matching</em></li>
-            </ol>
-        </nav>
+    <section style="padding-top: inherit; background-color: #cacaca;">
+        <div class="row">
+            <nav>
+                <ol class="cd-breadcrumb triangle">
+                    <li><a href="./index.html"><i class="fa fa-home" style="color: black;"></i> Home</a></li>
+                    <li class="current"><em>Kundali Matching</em></li>
+                </ol>
+            </nav>
+        </div>
     </section>
 
     <!-- Kundli Matching form -->
@@ -94,7 +97,7 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" id="name" class="form-control" value="Harish" name="name" placeholder="Enter Name">
+                                    <input type="text" id="name" class="form-control" name="name" placeholder="Enter Name">
                                 </div>
                             </div>
     
@@ -102,8 +105,8 @@
                                 <div class="form-group">
                                     <label for="gender">Gender</label>
                                     <select name="gender" id="gender" class="form-control select2bs4">
-                                        <option value="" > Select Gender</option>
-                                        <option value="Male" Selected>Male</option>
+                                        <option value="" Selected> Select Gender</option>
+                                        <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                     </select>
                                 </div>
@@ -112,29 +115,29 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="day">Date</label> <br>
-                                    <input type="number" id="day" name="day" value="10" class="form-control" placeholder="20" required>
+                                    <input type="number" id="day" name="day" class="form-control" placeholder="20" required>
                                 </div>
                         
                                 <div class="form-group">
                                     <label for="month">Month</label>
-                                    <input type="number" id="month" name="month" value="5" class="form-control" placeholder="10" required>
+                                    <input type="number" id="month" name="month" class="form-control" placeholder="10" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="year">Year</label>
-                                    <input type="number" id="year" name="year" value="2005" class="form-control" placeholder="2005" required>
+                                    <input type="number" id="year" name="year" class="form-control" placeholder="2005" required>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="hour">Hour</label> <br>
-                                    <input type="number" id="hour" class="form-control" value="9" name="hour" placeholder="8" required>
+                                    <input type="number" id="hour" class="form-control" name="hour" placeholder="8" required>
                                 </div>
                                 
                                 <div class="form-group"> 
                                     <label for="min">Minute</label>
-                                    <input type="number" id="min" class="form-control" value="45" name="min" placeholder="30" required>
+                                    <input type="number" id="min" class="form-control" name="min" placeholder="30" required>
                                 </div>
                             </div>
                             
@@ -168,7 +171,7 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="fname">Name</label>
-                                <input type="text" id="fname" class="form-control" value="Smriti" name="fname" placeholder="Enter Name">
+                                <input type="text" id="fname" class="form-control" name="fname" placeholder="Enter Name">
                             </div>
                         </div>
 
@@ -176,9 +179,9 @@
                             <div class="form-group">
                                 <label for="fgender">Gender</label>
                                 <select name="fgender" id="fgender" class="form-control select2bs4">
-                                    <option value=""> Select Gender</option>
+                                    <option value="" Selected> Select Gender</option>
                                     <option value="Male">Male</option>
-                                    <option value="Female" Selected>Female</option>
+                                    <option value="Female" >Female</option>
                                 </select>
                             </div>
                         </div>
@@ -186,29 +189,29 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="fday">Date</label> <br>
-                                <input type="number" id="fday" name="fday" value="18" placeholder="20"  required>
+                                <input type="number" id="fday" name="fday" placeholder="20"  required>
                             </div>
                     
                             <div class="form-group">
                                 <label for="fmonth">Month</label>
-                                <input type="number" id="fmonth" name="fmonth" value="7" placeholder="10" required>
+                                <input type="number" id="fmonth" name="fmonth" placeholder="10" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="fyear">Year</label>
-                                <input type="number" id="fyear" name="fyear" value="1997" placeholder="2005" required>
+                                <input type="number" id="fyear" name="fyear" placeholder="2005" required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="fhour">Hour</label> <br>
-                                <input type="number" id="fhour" name="fhour" value="3" placeholder="8" required>
+                                <input type="number" id="fhour" name="fhour" placeholder="8" required>
                             </div>
                             
                             <div class="form-group"> 
                                 <label for="fmin">Minute</label>
-                                <input type="number" id="fmin" name="fmin" value="29" placeholder="30" required>
+                                <input type="number" id="fmin" name="fmin" placeholder="30" required>
                             </div>
                         </div>
                         
@@ -247,112 +250,25 @@
     <!-- CRUD File -->
     <script src="./crud/c_kundli_matching.js"></script>
     
-<script>
-    //male- Get Latitude & Longitude using geo-location
-    $(document).ready(function () {
-        var autocomplete;
+    <!-- Location -->
+    <script src="./js/location.js"></script>
 
-        autocomplete = new google.maps.places.Autocomplete((document.getElementById('location')),
-            {
-                types: ['geocode'],
-            });
+    <!-- My Validation -->
+    <script src="./js/validation.js"></script>
 
-        google.maps.event.addListener(autocomplete, 'place_changed', function () {
-            var near_place = autocomplete.getPlace();
-        });
-    });
+    <!-- jQuery -->
+    <script src="js/jquery/jquery.min.js"></script>
 
-        //female - Get Latitude & Longitude using geo-location
-        $(document).ready(function () {
-        var autocomplete;
+    <!-- Bootstrap 4 -->
+    <script src="js/bootstrap/bootstrap.bundle.js"></script>
 
-        autocomplete = new google.maps.places.Autocomplete((document.getElementById('flocation')),
-            {
-                types: ['geocode'],
-            });
+    <!-- AdminLTE App -->
+    <script src="js/dist/adminlte.min.js"></script>
 
-        google.maps.event.addListener(autocomplete, 'place_changed', function () {
-            var near_place = autocomplete.getPlace();
-        });
-    });
-
-    // male location
-    function lat_lon() {
-        // Create a geocoder object
-        const geocoder = new google.maps.Geocoder();
-
-        // Define the address you want to geocode
-        const address = (document.getElementById("location").value);
-        // console.log(address);
-        
-        // Perform geocoding
-        geocoder.geocode({ address: address }, (results, status) => {
-            if (status === 'OK') {
-                // Get the latitude and longitude coordinates
-                const location = results[0].geometry.location;
-                const latitude = location.lat();
-                const longitude = location.lng();
-
-                // console.log('male Latitude:', latitude);
-                // console.log('male Longitude:', longitude);
-
-                const lan_send = document.getElementById("lat");
-                lan_send.value = latitude;
-
-                const lon_send = document.getElementById("lon");
-                lon_send.value = longitude;
-            }
-            // else
-            // {
-            //     console.error('Geocode was not successful for the following reason:', status);
-            // }
-        });
-    }
-
-    // female location
-    function f_lat_lon() {
-        // Create a geocoder object
-        const geocoder = new google.maps.Geocoder();
-
-        // Define the address you want to geocode
-        const address = (document.getElementById("flocation").value);
-        // console.log(address);
-        
-        // Perform geocoding
-        geocoder.geocode({ address: address }, (results, status) => {
-            if (status === 'OK') {
-                // Get the latitude and longitude coordinates
-                const location = results[0].geometry.location;
-                const latitude = location.lat();
-                const longitude = location.lng();
-
-                // console.log('female Latitude:', latitude);
-                // console.log('female Longitude:', longitude);
-
-                const lan_send = document.getElementById("flat");
-                lan_send.value = latitude;
-
-                const lon_send = document.getElementById("flon");
-                lon_send.value = longitude;
-            }
-            // else
-            // {
-            //     console.error('Geocode was not successful for the following reason:', status);
-            // }
-        });
-    }
-</script>
-<!-- My Validation -->
-<script src="./js/validation.js"></script>
-<!-- jQuery -->
-<script src="js/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="js/bootstrap/bootstrap.bundle.js"></script>
-<!-- AdminLTE App -->
-<script src="js/dist/adminlte.min.js"></script>
-<!-- jquery-validation -->
-<script src="js/jquery-validation/jquery.validate.min.js"></script>
-<script src="js/jquery-validation/additional-methods.min.js"></script>
+    <!-- jquery-validation -->
+    <script src="js/jquery-validation/jquery.validate.min.js"></script>
+    <script src="js/jquery-validation/additional-methods.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 
 </body>
 </html>

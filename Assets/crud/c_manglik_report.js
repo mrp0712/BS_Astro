@@ -2,8 +2,8 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
 event.preventDefault(); // Prevent form submission
 
   const api = "match_manglik_report";
-  const userId = "624429";
-  const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
+  const userId = "624650";
+  const apiKey = "0a3430927e3b74c01282d0b7432dd399";
   
   const now = new Date()
   const data = {
@@ -27,7 +27,7 @@ event.preventDefault(); // Prevent form submission
   };
 
   const auth = "Basic " + btoa(userId + ":" + apiKey);
-  // console.log(data)
+  console.log(data)
 
   fetch("https://json.astrologyapi.com/v1/" + api, {
     method: "POST",

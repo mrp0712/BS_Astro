@@ -1,9 +1,15 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BS Tech Astro</title>
+
+    <link rel="icon" type="image/x-icon" href="./images/icon/title_icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./css/register.css" />
+    <!-- Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 
     <!--FontOwsome cdn-->
     <script src="https://kit.fontawesome.com/5b95af3014.js" crossorigin="anonymous"></script>
@@ -15,11 +21,121 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
     <link rel="Stylesheet" href="./css/style.css">
+    <!-- <link rel="Stylesheet" href="./css/form.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
+    <style>
+        .form-group {
+    flex-basis: calc(33.33% - 10px);
+    font-size: 11px;
+    color: red;
+  }
+.span{
+    font-size: 10px;
+  }
+    </style>
 </head>
+
+ <!-- Home -->
+        <section class="home">
+            <div class="form_container">
+              <i class="uil uil-times form_close"></i>
+              
+              <!-- Login From -->
+              <div class="form login_form">
+                <form method="get" id="login_data">
+                  <h2>Login</h2>
+      
+                  <div class="form-group">
+                  <div class="input_box">
+                    <input type="email" placeholder="Enter your email" class="form-control" name="email" required />
+                    <i class="uil uil-envelope-alt email"></i>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="input_box">
+                    <input type="password" class="form-control" name="password" placeholder="Enter your password" required />
+                    <i class="uil uil-lock password"></i>
+                    <i class="uil uil-eye-slash pw_hide"></i>
+                  </div>
+                </div>
+      
+                  <div class="option_field">
+                    <span class="checkbox">
+                      <input type="checkbox" id="check" />
+                      <label for="check">Remember me</label>
+                    </span>
+                    <a href="#" id="forgot">Forgot password?</a>
+                  </div>
+      
+                  <input class="button" type="submit" value="Login">
+      
+                  <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
+                </form>
+              </div>
+      
+              <!-- Signup From -->
+              <div class="form signup_form">
+                <form id="signup_data" method="post" >
+                  <h2>Signup</h2>
+
+                <div class="form-group">
+                  <div class="input_box">
+                    <i class="fa-light fas fa-user"></i>
+                    <input type="name" id="sname" class="form-control" name="sname" placeholder="Enter your name" required />
+                  </div>
+                 </div>
+
+                <div class="form-group">
+                  <div class="input_box">
+                    <input type="email" id="semail" class="form-control" name="semail" placeholder="Enter your email" required />
+                    <i class="uil-envelope-alt email"></i>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="input_box">
+                    <i class="fa-light fas fa-cake-candles"></i>
+                    <input type="name" id="sdob" class="form-control" name="sdob" placeholder="Enter your Birthday" required />
+                  </div>
+                </div>
+                  
+                  <div class="form-group">
+                  <div class="input_box">
+                    <input type="password" id="spassword" class="form-control" name="spassword" placeholder="Create password" required />
+                    <i class="uil-lock password"></i>
+                    <i class="uil-eye-slash pw_hide"></i>
+                  </div>
+                 </div>
+
+                 <input class="button" type="submit" value="Register">
+      
+                  <div class="login_signup">Already have an account? <a href="#" id="login">Login</a></div>
+                </form>
+              </div>
+
+              <!-- Forgot From -->
+              <div class="form forgot_form">
+                <form  id="forgot_data" method="get" >
+                  <h2>Forgot Password</h2>
+
+                  <div class="input_box">
+                    <input type="email" placeholder="Enter your email" required />
+                    <i class="uil-envelope-alt email"></i>
+                  </div>
+                  
+                  <input type="submit" class="button" value="Get Email">
+      
+                  <div class="login_signup"><a href="#" id="back-to-login">Back</a></div>
+                </form>
+              </div>
+
+            </div>
+          </section>
 
 <body>
     <div class="header">
@@ -41,7 +157,8 @@
                         <li><a href="manglik_report.html">Manglik Report</a> -->
                     </ul>
                 </nav>
-                <img src="./images/profile.png" width="33px" height="30px">
+                <button class="button" id="form-open" >Login</button>
+                <!-- <a href ="user_register.html"><img src="./images/profile.png" width="33px" height="30px"></a> -->
             </div>
         </div>
     </div>
@@ -128,5 +245,26 @@
     <div class="footer">
         <a href="https://brainsquaretech.com/" style="color: white;">Copyright &#169;  2023 - BrainSquareTech Pvt. Ltd.</a>
     </div>
+
+    <script src="./js/register.js"></script>
+    <script src="./crud/c_register.js"></script>
+
+    <!-- My Validation -->
+    <script src="./js/validation.js"></script>
+
+    <!-- jQuery -->
+    <script src="js/jquery/jquery.min.js"></script>
+    
+    <!-- Bootstrap 4 -->
+    <script src="js/bootstrap/bootstrap.bundle.js"></script>
+    
+    <!-- AdminLTE App -->
+    <script src="js/dist/adminlte.min.js"></script>
+    
+    <!-- jquery-validation -->
+    <script src="js/jquery-validation/jquery.validate.min.js"></script>
+    <script src="js/jquery-validation/additional-methods.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    </script>
 </body>
 </html>

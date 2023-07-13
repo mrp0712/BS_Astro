@@ -1,9 +1,10 @@
 document.getElementById("myForm").addEventListener("submit", async (event) => {
-event.preventDefault(); // Prevent form submission
+  event.preventDefault(); // Prevent form submission  
 
-const api = "basic_panchang";
-const userId = "624429";
-const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
+  const api = "basic_panchang";
+  const userId = "624650";
+  const apiKey = "0a3430927e3b74c01282d0b7432dd399";
+
 
   const now = new Date()
   const data = {
@@ -36,41 +37,37 @@ const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
     })
     .then(function (responseData) {
       // console.log(responseData);
-      // fetch("http://localhost:8080/r_today_panchang", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({ ...data, ...responseData }),
-      // })
-      //   .then(function (response) {
-      //     if (!response.ok) {
-      //       throw new Error("API request failed. Status: " + response.status);
-      //     }
-      //     const res = response.json();
-      //     return res;
-      //   })
-      //   .then(function (responseData) {
+      fetch("http://localhost:8080/r_today_panchang", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...data, ...responseData }),
+      })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("API request failed. Status: " + response.status);
+          }
+          const res = response.json();
+          return res;
+        })
+        .then(function (responseData) {
           // console.log(responseData);
 
           let tabledata = "";
-            tabledata = `<div class="review" style="background:radial-gradient(#cfcfcf,#A9A9A9);">
+          tabledata = `<div class="review" style="background:radial-gradient(#cfcfcf,#A9A9A9);">
                   <div class="small-container">
                     <div class="row" style="flex-wrap:none;">      
                     
                     <div class="col-2">
-                        <div class="title" style = "margin:0 10px 10px 10px;">
-                          <h3><b> Sunrise <br>
-                            ${responseData.sunrise} </b> </h3>
-                          </div>
+                        
+                            <button style="padding: 4% 20%;border-radius: 60px; font-size: x-large; margin-left: 25%; background: radial-gradient(#f8dddd,#ddc376); border-color:orange;" > <i class="fa fa-sun-o" style="color:orange;"></i>&nbsp;Sunrise <br> ${responseData.sunset}</button>
+                          
                       </div>
                   
                       <div class="col-2">
-                        <div class="title" style = "margin:0 10px;">
-                          <h3><b> Sunset <br>
-                              ${responseData.sunset} </b> </h3>
-                            </div>
-                          </div>
+                      <button style="padding: 4% 20%;border-radius: 60px; font-size: x-large; margin-left: 21%; background: radial-gradient(#f8dddd,#688cb3); border-color:blue;"><i class="fa fa-moon-o" style="color:blue;"></i> Sunset <br> ${responseData.sunrise}</button>
+                      </div>
                   </div>
 
                     <h2 class="title"style="margin:0 15px;">Today Panchang Details</h2>
@@ -126,19 +123,19 @@ const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
                         </tr>
                         <tr>
                           <th>Sunrise</th>
-                          <td>${responseData.sunrise}</td>
-                        </tr>
-                        <tr>
-                          <th>Sunset</th>
                           <td>${responseData.sunset}</td>
                         </tr>
                         <tr>
+                          <th>Sunset</th>
+                          <td>${responseData.sunrise}</td>
+                        </tr>
+                        <tr>
                           <th>Vedic Sunrise</th>
-                          <td>${responseData.vedic_sunrise}</td>
+                          <td>${responseData.vedic_sunset}</td>
                         </tr>
                         <tr>
                           <th>Vedic Sunset</th>
-                          <td>${responseData.vedic_sunset}</td>
+                          <td>${responseData.vedic_sunrise}</td>
                         </tr>
                       </table>
                     </div>
@@ -154,4 +151,4 @@ const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
     .catch(function (error) {
       console.log(error);
     })
-// })
+})

@@ -2,8 +2,8 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
 event.preventDefault(); // Prevent form submission
 
   const api = "chaughadiya_muhurta";
-  const userId = "624429";
-  const apiKey = "1a5f960dbadf808e77c76c87974a4db8";
+  const userId = "624650";
+  const apiKey = "0a3430927e3b74c01282d0b7432dd399";
 
   const now = new Date()
   const data = {
@@ -38,23 +38,23 @@ event.preventDefault(); // Prevent form submission
     })
     .then(function (responseData) {
       // console.log(responseData)
-      // fetch("http://localhost:8080/r_chaughadiya_muhurta", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({ ...data, ...responseData }),
-      // })
-      //   .then(function (response) {
-      //     if (!response.ok) {
-      //       throw new Error("API request failed. Status: " + response.status);
-      //     }
-      //     const res = response.json();
-      //     // console.log(res)
-      //     return res;
-      //   })
-      //   .then(function (responseData) {
-      //     console.log(responseData);
+      fetch("http://localhost:8080/r_chaughadiya_muhurta", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...data, ...responseData }),
+      })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("API request failed. Status: " + response.status);
+          }
+          const res = response.json();
+          // console.log(res)
+          return res;
+        })
+        .then(function (responseData) {
+          console.log(responseData)
           
           let tabledata = "";
           let daydata = "";
@@ -118,4 +118,4 @@ event.preventDefault(); // Prevent form submission
     .catch(function (error) {
       console.log(error);
     })
-  // })
+  })

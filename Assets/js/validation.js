@@ -2,6 +2,34 @@ $(function () {
     
     $('#myForm').validate({
       rules: {
+        
+        // user's form (login-signup-forgot)
+        email: {
+          required: true,
+          email: true,
+        },
+        password: {
+          required: true,
+          minlength: 6,
+        },
+
+        sname: {
+          required: true,
+          minLength: 3,
+        },
+        semail: {
+          required: true,
+          email: true,
+        },
+        sdob: {
+          required: true
+        },
+        spassword: {
+          required: true,
+          minlength: 6,
+        },
+
+        // others
         name:
         {
           required: true,
@@ -48,6 +76,15 @@ $(function () {
         },
 
       // Female form
+      fname:
+        {
+          required: true,
+          minlength: 3
+        },
+      fgender:
+        {
+          required: true
+        },
       fday: {
         required: true,
         min: 1,
@@ -82,10 +119,36 @@ $(function () {
 
     // messages
       messages: {
+
+        // user's form (login-signup-forgot)
+        email: {
+          required: "Please enter email id.",
+          email: "Please enter valid email address <br>Must contain <b>@ & .</b>"
+        },
+        password: {
+          required: "Please enter Password.",
+          minlength: "Password has at least <b>6</b> character's."
+        },
+
+        sname: {
+          required: "Please enter name.",
+          minlength: "Minimum length of name is 3."
+        },
+        semail: {
+          required: "Please enter email id.",
+          email: "Please enter valid email address <br>Must contain <b>@ & .</b>"
+        },
+        sdob: {
+          required: "Please enter DOB."
+        },
+        spassword: {
+          required: "Please enter Password.",
+          minlength: "Password has at least <b>6</b> character's."
+        },
+        
         name: {
           required: "Please enter name.",
           minlength: "Minimum length of name is 3."
-
         },
         gender: {
           required: "Please select gender."
@@ -126,6 +189,14 @@ $(function () {
         },
 
         // female messages
+        fname: {
+          required: "Please enter name.",
+          minlength: "Minimum length of name is 3."
+
+        },
+        fgender: {
+          required: "Please select gender."
+        },
         fday: {
             required: "Please enter date.",
           //   min: "Minimum date is 1.",
@@ -167,12 +238,9 @@ $(function () {
       unhighlight: function (element, errorClass, validClass) {
         $(element).removeClass('is-invalid');
       }
-    }); 
+    });
   });
-
-
-
-  
+      
 
 
 

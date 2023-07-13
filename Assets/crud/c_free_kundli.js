@@ -63,8 +63,7 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
   };
 
   const auth = "Basic " + btoa(userId + ":" + apiKey);
-  // console.log(data)
-
+  console.log(data)
   fetch("https://json.astrologyapi.com/v1/" + api, {
     method: "POST",
     headers: {
@@ -82,24 +81,24 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
       return res;
     })
     .then(function (responseData) {
-      // console.log(responseData)
-      // fetch("http://localhost:8080/r_free_kundli", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({ ...data, ...responseData }),
-      // })
-      //   .then(function (response) {
-      //     if (!response.ok) {
-      //       throw new Error("API request failed. Status: " + response.status);
-      //     }
-      //     const res = response.json();
-      //     // console.log(res)
-      //     return res;
-      //   })
-      //   .then(function (responseData) {
-      //     console.log(responseData)
+      console.log(responseData)
+      fetch("http://localhost:8080/r_free_kundli", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...data, ...responseData }),
+      })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("API request failed. Status: " + response.status);
+          }
+          const res = response.json();
+          // console.log(res)
+          return res;
+        })
+        .then(function (responseData) {
+          console.log(responseData)
 
 
           // Print all Data
@@ -128,26 +127,26 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
 
 
           // const api3 = "horo_chart_image/:chalit";  // Chalit Chart
-          // fetch("https://json.astrologyapi.com/v1/" + api3, {
-          //   method: "POST",
-          //   headers: {
-          //     Authorization: auth,
-          //     "Content-Type": "application/json",
-          //   },
-          //   body: JSON.stringify(data),
-          // })
-          //   .then(function (response) {
-          //     if (!response.ok) {
-          //       throw new Error("API request failed. Status: " + response.status);
-          //     }
-          //     const res = response.json();
-          //     return res;
-          //   })
+          fetch("https://json.astrologyapi.com/v1/" + api3, {
+            method: "POST",
+            headers: {
+              Authorization: auth,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then(function (response) {
+              if (!response.ok) {
+                throw new Error("API request failed. Status: " + response.status);
+              }
+              const res = response.json();
+              return res;
+            })
 
-            // .then(function (responseData) {
-              // chalit:
-              //  convertSvgToJpg(responseData.svg, "white")
-            // });
+            .then(function (responseData) {
+              chalit:
+               convertSvgToJpg(responseData.svg, "white")
+            });
 
 
           // const api4 = "horo_chart_image/:moon";  // Moon Chart
@@ -337,7 +336,7 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
 
               <div id="div4" class="content hidden">
                 <div class="row">
-                  <div class="review" style="background:radial-gradient(#cfcfcf,#A9A9A9);">
+                <div class="review" style="background:radial-gradient(#cfcfcf,#A9A9A9); width:96%">
                     <div class="small-container">
                       <div class="title"style="margin:0 15px; ">
                     <h4><b> Astakvarga </b> </h4>
@@ -357,7 +356,7 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                       <th>Aquarius</th>
                       <th>Pisces</th>
                     </tr>
-                   
+                    
                   </table>
                 </div>
               </div>
@@ -387,4 +386,4 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
       .catch(function (error) {
         console.log(error);
       })
-    // })
+    })

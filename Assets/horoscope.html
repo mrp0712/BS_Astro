@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horoscope</title>
+    <link rel="icon" type="image/x-icon" href="./images/icon/title_icon.png">
     <link src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" />
 
@@ -69,15 +70,15 @@
         </div>
     </div>
    
-    <section style="padding-top: inherit; background-color: #e9e6e6;">
-        <div class="row" >
-        <nav>
-            <ol class="cd-breadcrumb triangle">
-                <li><a href="./index.html">Home</a></li>
-                <li class="current"><em>Horoscope </em></li>
-            </ol>
-        </nav>
-    </div>
+    <section style="padding-top: inherit; background-color: #cacaca;">
+        <div class="row">
+            <nav>
+                <ol class="cd-breadcrumb triangle">
+                    <li><a href="./index.html"><i class="fa fa-home" style="color: black;"></i> Home</a></li>
+                    <li class="current"><em>Horoscope</em></li>
+                </ol>
+            </nav>
+        </div>
     </section>
 
     <!-- panchang page -->
@@ -144,60 +145,12 @@
     <!-- CRUD File -->
     <script src="./crud/c_horoscope.js"></script>
 
-
-<script>
-        // Get Latitude & Longitude using geo-location
-        $(document).ready(function () {
-            var autocomplete;
-
-            autocomplete = new google.maps.places.Autocomplete((document.getElementById('location')),
-                {
-                    types: ['geocode'],
-                });
-
-            google.maps.event.addListener(autocomplete, 'place_changed', function () {
-                var near_place = autocomplete.getPlace();
-            });
-        });
-    </script>
-
-    <script>
-        function lat_lon() {
-            // Create a geocoder object
-            const geocoder = new google.maps.Geocoder();
-
-            // Define the address you want to geocode
-            const address = (document.getElementById("location").value);
-            // console.log(address);
-
-            // Perform geocoding
-            geocoder.geocode({ address: address }, (results, status) => {
-                if (status === 'OK') {
-                    // Get the latitude and longitude coordinates
-                    const location = results[0].geometry.location;
-                    const latitude = location.lat();
-                    const longitude = location.lng();
-
-                    // console.log('Latitude:', latitude);
-                    // console.log('Longitude:', longitude);
-
-                    const lan_send = document.getElementById("lat");
-                    lan_send.value = latitude;
-
-                    const lon_send = document.getElementById("lon");
-                    lon_send.value = longitude;
-                }
-                // else
-                // {
-                //     console.error('Geocode was not successful for the following reason:', status);
-                // }
-            });
-        }
-    </script>
-
     <!-- My Validation -->
     <script src="./js/validation.js"></script>
     
+    <!-- Location -->
+    <script src="./js/location.js"></script>
+
     <!-- jQuery -->
     <script src="js/jquery/jquery.min.js"></script>
     

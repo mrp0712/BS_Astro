@@ -2,8 +2,8 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
   event.preventDefault(); // Prevent form submission
   
     const api = "western_horoscope";
-    const userId = "624428";
-    const apiKey = "a949db00ab0cbf4b3ea1a60d9563a6a4";
+    const userId = "624651";
+    const apiKey = "2759afdad197aaefe7d94633e09f531c";
   
     const now = new Date()
     const data = {
@@ -38,24 +38,24 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
       })
       .then(function (responseData) {
         console.log(responseData);
-        // fetch("http://localhost:8080/r_horoscope", {
-        //   method: "POST",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        //   body: JSON.stringify({ ...data, ...responseData }),
-        // })
-        //   .then(function (response) {
-        //     if (!response.ok) {
-        //       throw new Error("API request failed. Status: " + response.status);
-        //     }
-        //     const res = response.json();
-        //     // console.log(res)
-        //     return res;
-        //   })
-        //   .then(function (responseData) {
-        //     console.log(responseData);
-
+        fetch("http://localhost:8080/r_horoscope", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...data, ...responseData }),
+        })
+          .then(function (response) {
+            if (!response.ok) {
+              throw new Error("API request failed. Status: " + response.status);
+            }
+            const res = response.json();
+            // console.log(res)
+            return res;
+          })
+          .then(function (responseData) {
+            console.log(responseData);
+            
             let planetdata="";
             let tabledata = "";
             let housedata = "";
@@ -125,7 +125,7 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                               <td>${responseData.lilith.full_degree}</td>
                             </tr>
                             <tr>
-                              <th>Norm Degree</th>
+                              <th>Normal Degree</th>
                               <td>${responseData.lilith.norm_degree}</td>
                             </tr>
                             <tr>
@@ -216,4 +216,4 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
       .catch(function (error) {
         console.log(error);
       })
-    // })
+    });

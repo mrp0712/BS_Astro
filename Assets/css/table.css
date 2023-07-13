@@ -62,3 +62,6 @@ tr:nth-child(odd) {
     color: rgb(19, 20, 29);
     background-color: #ffffff;
   }
+  .filter-button.active {
+    background-color: gray;
+}
