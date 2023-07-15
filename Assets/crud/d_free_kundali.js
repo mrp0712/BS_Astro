@@ -15,16 +15,18 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
     const userId = "624650";
     const apiKey = "0a3430927e3b74c01282d0b7432dd399";
 
+    var dob = document.getElementById("dob_time");
+    var selectedDate = new Date(dob.value);
+
     const data = {
         name: document.getElementById("name").value,
         gender: document.getElementById("gender").value,
         location: document.getElementById("location").value,
-        sec : document.getElementById("sec").value,
-        day: document.getElementById("day").value,
-        month: document.getElementById("month").value,
-        year: document.getElementById("year").value,
-        hour: document.getElementById("hour").value,
-        min: document.getElementById("min").value,
+        day: selectedDate.getDate(),
+        month: selectedDate.getMonth() + 1, // Add 1 because months are zero-based
+        year: selectedDate.getFullYear(),
+        hour: selectedDate.getHours(),
+        min: selectedDate.getMinutes(),
         lat: document.getElementById("lat").value,
         lon: document.getElementById("lon").value,
         tzone: document.getElementById("tzone").value
@@ -42,15 +44,16 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
         body: JSON.stringify(data),
     })
         .then(function (response) {
+            debugger
             if (!response.ok) {
                 throw new Error("API request failed. Status: " + response.status);
             }
             const res = response.json();
-            console.log(res)
+            // console.log(res)
             return res;
         })
         .then(function (responseData) {
-            console.log(responseData)
+            // console.log(responseData)
 
             localStorage.setItem("api1", JSON.stringify(responseData));
             window.location.href = "d_free_kundali.html";
@@ -80,11 +83,11 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                 throw new Error("API request failed. Status: " + response.status);
             }
             const res = response.json();
-            console.log(res)
+            // console.log(res)
             return res;
         })
         .then(function (responseData) {
-            console.log(responseData)
+            // console.log(responseData)
 
             localStorage.setItem("api2", JSON.stringify(responseData));
             window.location.href = "d_free_kundali.html";
@@ -109,11 +112,11 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                 throw new Error("API request failed. Status: " + response.status);
             }
             const res = response.json();
-            console.log(res)
+            // console.log(res)
             return res;
         })
         .then(function (responseData) {
-            console.log(responseData)
+            // console.log(responseData)
 
             localStorage.setItem("api3a", JSON.stringify(responseData));
             window.location.href = "d_free_kundali.html";
@@ -137,11 +140,11 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                 throw new Error("API request failed. Status: " + response.status);
             }
             const res = response.json();
-            console.log(res)
+            // console.log(res)
             return res;
         })
         .then(function (responseData) {
-            console.log(responseData)
+            // console.log(responseData)
 
             localStorage.setItem("api3b", JSON.stringify(responseData));
             window.location.href = "d_free_kundali.html";
@@ -165,11 +168,11 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                 throw new Error("API request failed. Status: " + response.status);
             }
             const res = response.json();
-            console.log(res)
+            // console.log(res)
             return res;
         })
         .then(function (responseData) {
-            console.log(responseData)
+            // console.log(responseData)
 
             localStorage.setItem("api4", JSON.stringify(responseData));
             window.location.href = "d_free_kundali.html";
@@ -192,11 +195,11 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                 throw new Error("API request failed. Status: " + response.status);
             }
             const res = response.json();
-            console.log(res)
+            // console.log(res)
             return res;
         })
         .then(function (responseData) {
-            console.log(responseData)
+            // console.log(responseData)
 
             localStorage.setItem("api5a", JSON.stringify(responseData));
             window.location.href = "d_free_kundali.html";
@@ -219,11 +222,11 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                 throw new Error("API request failed. Status: " + response.status);
             }
             const res = response.json();
-            console.log(res)
+            // console.log(res)
             return res;
         })
         .then(function (responseData) {
-            console.log(responseData)
+            // console.log(responseData)
 
             localStorage.setItem("api5b", JSON.stringify(responseData));
             window.location.href = "d_free_kundali.html";
@@ -246,11 +249,11 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                 throw new Error("API request failed. Status: " + response.status);
             }
             const res = response.json();
-            console.log(res)
+            // console.log(res)
             return res;
         })
         .then(function (responseData) {
-            console.log(responseData)
+            // console.log(responseData)
 
             localStorage.setItem("api5c", JSON.stringify(responseData));
             window.location.href = "d_free_kundali.html";
@@ -273,11 +276,11 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                 throw new Error("API request failed. Status: " + response.status);
             }
             const res = response.json();
-            console.log(res)
+            // console.log(res)
             return res;
         })
         .then(function (responseData) {
-            console.log(responseData)
+            // console.log(responseData)
 
             localStorage.setItem("api6a", JSON.stringify(responseData));
             window.location.href = "d_free_kundali.html";
@@ -300,11 +303,11 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
                 throw new Error("API request failed. Status: " + response.status);
             }
             const res = response.json();
-            console.log(res)
+            // console.log(res)
             return res;
         })
         .then(function (responseData) {
-            console.log(responseData)
+            // console.log(responseData)
 
             localStorage.setItem("api6b", JSON.stringify(responseData));
             window.location.href = "d_free_kundali.html";

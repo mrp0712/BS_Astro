@@ -58,3 +58,38 @@ backToLoginBtn.addEventListener("click", (e) => {
   forgotForm.style.display = "none";
   loginForm.style.display = "block";
 });
+
+
+// Password Validation
+function validate_password() {
+
+			var pass = document.getElementById('pass').value;
+			var confirm_pass = document.getElementById('cpass').value;
+			if (pass != confirm_pass) {
+				document.getElementById('wrong_pass_alert').style.color = 'red';
+				document.getElementById('wrong_pass_alert').innerHTML
+					= '☒ Use same password';
+				document.getElementById('create').disabled = true;
+				document.getElementById('create').style.opacity = (0.4);
+			} else {
+				document.getElementById('wrong_pass_alert').style.color = 'green';
+				document.getElementById('wrong_pass_alert').innerHTML =
+					'🗹 Password Matched';
+				document.getElementById('create').disabled = false;
+				document.getElementById('create').style.opacity = (1);
+			}
+		}
+    
+		function wrong_pass_alert() {
+			if (document.getElementById('pass').value != "" &&
+				document.getElementById('cpass').value != "") {
+				alert("Your data is submitted");
+			} else {
+				alert("Please fill all the fields");
+			}
+		}
+
+    function showAlert() {
+      alert("Please Login");
+      wondow.location.href = "login_index.html";
+    }

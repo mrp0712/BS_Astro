@@ -19,7 +19,7 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
   };
 
   const auth = "Basic " + btoa(userId + ":" + apiKey);
-  console.log(data);
+  // console.log(data);
   fetch("https://json.astrologyapi.com/v1/" + api, {
     method: "POST",
     headers: {

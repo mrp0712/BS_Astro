@@ -1,9 +1,8 @@
-// to start Project open terminal and type : npm start
+// to start Project open terminal and type : npm start or node app.js
 
 const port_no = 8080 // Port Number where Project is running
 const db_name = 'db_astrology' // Database Name
 
-// const open = require('./node_modules/open') // To open Project
 const express = require('express')
 const mongoose = require('mongoose')
 const url = `mongodb://0.0.0.0:27017/${db_name}`
@@ -43,28 +42,11 @@ app.use('/r_kundli_matching', r_kundli_matching_Router)
 const r_chaughadiyaRouter = require('./routes/r_chaughadiya_muhurta')
 app.use('/r_chaughadiya_muhurta', r_chaughadiyaRouter)
 
-// User Details
+// Signup Details
 const r_registerRouter = require('./routes/r_register')
 app.use('/r_register', r_registerRouter)
 
 // Display Port Number
 app.listen(port_no, () => {
     console.log(`Server running on port : ${port_no}`)
-    // open('./BS_Astro/Asstes/index.html');
 })
-
-// Numero Table
-// const r_numtableRouter = require('./routes/r_numtable')
-// app.use('/r_numtable', r_numtableRouter)
-
-// Planet
-// const r_planetRouter = require('./routes/r_planet')
-// app.use('/r_planet', r_planetRouter)
-
-// Manglik Report
-// const r_manglikRouter = require('./routes/r_manglik_report')
-// app.use('/r_manglik_report', r_manglikRouter)
-
-// Numero Place Vastu
-// const r_numvastuRouter = require('./routes/r_numvastu')
-// app.use('/r_numvastu', r_numvastuRouter)

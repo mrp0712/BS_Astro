@@ -24,11 +24,46 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.post("/login", async (req, res) => {
+  try {
+
+      const email =  req.body.email;
+      const pass = req.body.pass;
+
+      console.log(`${email} and password is ${pass}`)
+    
+
+    const foundUser = await Register.findOne({email: email});
+    
+    console.log(foundUser)
+    if (!foundUser)
+    {
+      return res.json(404).json({ error: "User not found" });
+    }
+
+    if (foundUser.pass === pass) {
+      return res.json({ success: true, redirect: "horoscope.html" });
+    } else {
+      return res.json({ success: false, redirect: "index.html" });
+    }
+  } 
+  catch (err)
+  {
+    console.error(err);
+    res.status(500).send("Something went wrong");
+  }
+});
+
 // Insert register
 router.post("/", async (req, res) => {
   try {
-    const { name, email, dob, password } = req.body;
-    const regi = new Register({ name, email, dob, password });
+    const regi = new Register({
+      name: req.body.name,
+      email: req.body.email,
+      dob: req.body.dob,
+      pass: req.body.pass,
+      mno: req.body.mno,
+    });
     const savedRegister = await regi.save();
     res.json(savedRegister);
   } catch (err) {
@@ -53,7 +88,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// Delete chaughadiya
+// Delete register
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;

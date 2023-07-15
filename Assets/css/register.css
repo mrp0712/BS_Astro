@@ -25,6 +25,7 @@ a {
   background-color: #aabfe9;
   border-radius: 6px;
   cursor: pointer;
+  margin-right: 10px;
 }
 .button:active {
   transform: scale(0.98);
@@ -119,7 +120,7 @@ a {
   width: 100%;
   border: none;
   outline: none;
-  padding: 0 30px;
+  padding-left: 30px;
   color: #333;
   transition: all 0.2s ease;
   border-bottom: 1.5px solid #aaaaaa;

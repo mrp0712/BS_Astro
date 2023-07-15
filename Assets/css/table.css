@@ -64,4 +64,5 @@ tr:nth-child(odd) {
   }
   .filter-button.active {
     background-color: gray;
+    color: white;
 }

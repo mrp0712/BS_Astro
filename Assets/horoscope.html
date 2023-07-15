@@ -21,6 +21,7 @@
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
     <link rel="Stylesheet" href="./css/style.css">
     <link rel="Stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/register.css" />
     <link rel="Stylesheet" href="./css/breadcrumb.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,16 +45,13 @@
                         <li><a href="horoscope.html">Horoscope</a> </li>
                         <li><a href="kundli_matching.html">Kundali Matching</a></li>
                         <li><a href="chaughadiya_muhurta.html">Chaughadiya Muhurta</a></li>
-                        <!-- <li><a href="num_table.html">Numero Table</a> </li>
-                        <li><a href="planet_detail.html">Planetary Transit</a> </li>
-                        <li><a href="manglik_report.html">Manglik Report</a> -->
                     </ul>
                 </nav>
-                <img src="./images/profile.png" width="33px" height="30px">
+                <button class="button" onclick="window.location.href = 'login_index.html';">Logout</button>
             </div>
         </div>
     </div>
-    <div class="first" style="height: 300px;background: radial-gradient(#f8dddd,#5a9dc5);">
+    <div class="first" style="height: 275px;background: radial-gradient(#f8dddd,#5a9dc5);">
         <div class="small-container">
             <div class="row">
                 <div class="col-2" style=" padding-left: 90px;">
@@ -91,20 +89,6 @@
                             <h3> Horoscope </h3>
                         </div>
                         <form method="post" id="myForm">
-                            <!-- <label for="day">Day :</label> <br> -->
-                            <!-- <input type="hidden" id="day" name="day" value="" min="1900-01-01" max="2099-12-31" required> <bt></bt> -->
-
-                            <!--    <label for="month">Month:</label> -->
-                            <!-- <input type="hidden" id="month" name="month" min="1" max="12" placeholder="5" required> -->
-
-                            <!-- <label for="year">Year:</label> -->
-                            <!-- <input type="hidden" id="year" name="year" min="1900" max="2099" placeholder="2023" required> -->
-
-                            <!-- <label for="Hour">Hour :</label> <br> -->
-                            <!-- <input type="hidden" id="hour" name="hour" required> -->
-
-                            <!-- <label for="min">Minute:</label> -->
-                            <!-- <input type="hidden" id="min" name="min" min="1" max="60" value="" required> -->
 
                             <div class="form-group">
                                 <label for="location">City :</label>
@@ -163,6 +147,5 @@
     <!-- jquery-validation -->
     <script src="js/jquery-validation/jquery.validate.min.js"></script>
     <script src="js/jquery-validation/additional-methods.min.js"></script>
-
 </body>
 </html>

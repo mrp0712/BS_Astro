@@ -13,12 +13,16 @@ const registerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  password: {
+  pass: {
     type: String,
+    required: true,
+  },  
+  mno: {
+    type: Number,
     required: true,
   },
 });
 
-const Register = mongoose.model("Register", registerSchema);
+const Register = mongoose.model("register", registerSchema);
 
 module.exports = Register;

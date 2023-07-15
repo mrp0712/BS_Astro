@@ -37,7 +37,7 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
         return res;
       })
       .then(function (responseData) {
-        console.log(responseData);
+        // console.log(responseData);
         fetch("http://localhost:8080/r_horoscope", {
           method: "POST",
           headers: {
@@ -54,8 +54,7 @@ document.getElementById("myForm").addEventListener("submit", async (event) => {
             return res;
           })
           .then(function (responseData) {
-            console.log(responseData);
-            
+            // console.log(responseData);            
             let planetdata="";
             let tabledata = "";
             let housedata = "";

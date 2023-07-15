@@ -35,18 +35,7 @@ router.post("/", async (req, res) => {
       lon: req.body.lon,
       tzone: req.body.tzone,
       chaughadiya: req.body.chaughadiya
-  });  
-
-    //     [{
-    //     chaughadiya_day_time: req.body.chaughadiya.day.time,
-    //     chaughadiya_day_muhurta: req.body.chaughadiya.day.muhurta
-    // }],
-
-    // [{
-    //     chaughadiya_night_time: req.body.chaughadiya.night.time,
-    //   chaughadiya_night_muhurta: req.body.chaughadiya.night.muhurta
-    // }]
-     
+  }); 
 
     const a1 = await chaugh.save();
     res.json(a1);

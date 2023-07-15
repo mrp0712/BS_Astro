@@ -54,7 +54,7 @@ event.preventDefault(); // Prevent form submission
           return res;
         })
         .then(function (responseData) {
-          console.log(responseData)
+          // console.log(responseData)
           
           let tabledata = "";
           let daydata = "";
@@ -90,7 +90,7 @@ event.preventDefault(); // Prevent form submission
                                               <th>Time</th>
                                               <th>Muhurta</th>
                                          </tr>
-                                          ${daydata}
+                                          ${nightdata}
                                       </table>
                                  </div>
                                   <div class="col-2">
@@ -102,7 +102,7 @@ event.preventDefault(); // Prevent form submission
                                               <th>Time</th>
                                               <th>Muhurta</th>
                                           </tr>
-                                          ${nightdata}
+                                          ${daydata}
                                      </table>
                                  </div>
                              </div>

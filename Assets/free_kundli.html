@@ -20,7 +20,8 @@
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
     <link rel="Stylesheet" href="./css/style.css">
     <link rel="Stylesheet" href="./css/form.css">
-    <link rel="Stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/register.css" />
+    <!-- <link rel="Stylesheet" href="./css/table.css"> -->
     <link rel="Stylesheet" href="./css/breadcrumb.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,18 +62,13 @@
                         <li><a href="horoscope.html">Horoscope</a> </li>
                         <li><a href="kundli_matching.html">Kundali Matching</a></li>
                         <li><a href="chaughadiya_muhurta.html">Chaughadiya Muhurta</a></li>
-                        <!-- <li><a href="num_table.html">Numero Table</a> </li>
-                        <li><a href="planet_detail.html">Planetary Transit</a> </li>
-                        <li><a href="manglik_report.html">Manglik Report</a> -->
                     </ul>
                 </nav>
-
-                <!-- Login image -->
-                <img src="./images/profile.png" width="33px" height="30px">
+                <button class="button" onclick="window.location.href = 'login_index.html';">Logout</button>
             </div>
         </div>
     </div>
-    <div class="first" style="height: 300px;background: radial-gradient(#f8dddd,#5a9dc5);">
+    <div class="first" style="height: 275px;background: radial-gradient(#f8dddd,#5a9dc5);">
         <div class="small-container">
             <div class="row">
                 <div class="col-2" style=" padding-left: 90px;">
@@ -101,13 +97,12 @@
         </div>
     </section>
 
-    <!-- Kundli Matching form -->
+    <!-- Kundli form -->
     <div class="panchang">
         <div class="small-container">
             
-            <!-- <div class="form-wrapper"> -->
             <form id="myForm" method="post" style="width: 100%; background-color: lightgrey;">
-                <div class="row" style="width: 100%; background-color: lightgrey; padding-top: 5%">
+                <div class="row" style="width: 100%; background-color: lightgrey; padding-top: 5%; padding-bottom:5%;">
 
                     <!-- Male -->
                     <div class="col-2" style="height:auto; min-width:auto; align-content: left; display: inline-block;">
@@ -120,8 +115,7 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" id="name" class="form-control" name="name"
-                                        placeholder="Enter Name">
+                                    <input type="text" id="name" class="form-control" name="name" placeholder="Enter Name">
                                 </div>
                             </div>
 
@@ -138,41 +132,8 @@
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="day"> Birth Day</label> <br>
-                                    <input type="number" id="day" name="day" class="form-control" placeholder="20"
-                                        required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="month">Birth Month</label>
-                                    <input type="number" id="month" name="month" class="form-control" placeholder="10"
-                                        required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="year">Birth Year</label>
-                                    <input type="number" id="year" name="year" class="form-control" placeholder="2005"
-                                        required>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="hour">Birth Hour</label> <br>
-                                    <input type="number" id="hour" class="form-control" name="hour" placeholder="8"
-                                        required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="min">Birth Minute</label>
-                                    <input type="number" id="min" class="form-control" name="min" placeholder="30"
-                                        required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="sec">Birth Second</label>
-                                    <input type="number" id="sec" class="form-control" name="sec" placeholder="45"
-                                        required>
+                                    <label for="name">Date of Birth & Time</label>
+                                    <input type="datetime-local" id="dob_time" class="form-control" name="dob_time" placeholder="Enter your Birthday">
                                 </div>
                             </div>
 
@@ -200,7 +161,7 @@
 
                     <div class="col-2">
                         <img src="./images/panchang.png" class="panchang-img"
-                            style="height: 500px; width: 350px;padding: 40px 0px">
+                            style="height: 400px; width: 250px;padding: 40px 0px">
                     </div>
                 </div>
             </form>
@@ -218,7 +179,6 @@
 
     <!-- CRUD File -->
     <script src="./crud/d_free_kundali.js"></script>
-    <!-- <script src="./crud/c_free_kundli2.js"></script> -->
 
     <script>
 
@@ -248,8 +208,5 @@
     <!-- jquery-validation -->
     <script src="js/jquery-validation/jquery.validate.min.js"></script>
     <script src="js/jquery-validation/additional-methods.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-
 </body>
-
 </html>

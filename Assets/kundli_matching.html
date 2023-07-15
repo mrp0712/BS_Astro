@@ -20,6 +20,7 @@
         <link rel="Stylesheet" href="./css/style.css">
         <link rel="Stylesheet" href="./css/form.css">
         <link rel="Stylesheet" href="./css/table.css">
+        <link rel="stylesheet" href="./css/register.css" />
         <link rel="Stylesheet" href="./css/breadcrumb.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,16 +44,13 @@
                         <li><a href="horoscope.html">Horoscope</a> </li>
                         <li><a href="kundli_matching.html">Kundali Matching</a></li>
                         <li><a href="chaughadiya_muhurta.html">Chaughadiya Muhurta</a></li>
-                        <!-- <li><a href="num_table.html">Numero Table</a> </li>
-                        <li><a href="planet_detail.html">Planetary Transit</a> </li>
-                        <li><a href="manglik_report.html">Manglik Report</a> -->
                     </ul>
                 </nav>
-                <img src="./images/profile.png" width="33px" height="30px">
+                <button class="button" onclick="window.location.href = 'login_index.html';">Logout</button>
             </div>
         </div>
     </div>
-    <div class="first" style="height: 300px;background: radial-gradient(#f8dddd,#5a9dc5);">
+    <div class="first" style="height: 275px;background: radial-gradient(#f8dddd,#5a9dc5);">
         <div class="small-container">
             <div class="row">
                 <div class="col-2" style=" padding-left: 90px;">
@@ -94,13 +92,14 @@
                             <div class="form-title">
                                <label> Male Details</label>
                             </div>
+                            
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name">Name</label>
                                     <input type="text" id="name" class="form-control" name="name" placeholder="Enter Name">
                                 </div>
                             </div>
-    
+
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="gender">Gender</label>
@@ -111,41 +110,19 @@
                                     </select>
                                 </div>
                             </div>
-    
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="day">Date</label> <br>
-                                    <input type="number" id="day" name="day" class="form-control" placeholder="20" required>
-                                </div>
-                        
-                                <div class="form-group">
-                                    <label for="month">Month</label>
-                                    <input type="number" id="month" name="month" class="form-control" placeholder="10" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="year">Year</label>
-                                    <input type="number" id="year" name="year" class="form-control" placeholder="2005" required>
-                                </div>
-                            </div>
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="hour">Hour</label> <br>
-                                    <input type="number" id="hour" class="form-control" name="hour" placeholder="8" required>
-                                </div>
-                                
-                                <div class="form-group"> 
-                                    <label for="min">Minute</label>
-                                    <input type="number" id="min" class="form-control" name="min" placeholder="30" required>
+                                    <label for="name">Date of Birth & Time</label>
+                                    <input type="datetime-local" id="dob_time" class="form-control" name="dob_time" placeholder="Enter your Birthday">
                                 </div>
                             </div>
-                            
+                           
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="location">City</label>
+                                    <label for="location">Birth Place</label>
                                     <input type="text" id="location" class="form-control" name="location"
-                                    placeholder="ex. Ahmedabad, Gujarat, India" onkeyup="lat_lon()">
+                                        placeholder="ex. Ahmedabad, Gujarat, India" onkeyup="lat_lon()">
                                 </div>
                             </div>
                             
@@ -168,58 +145,37 @@
                         <div class="form-title">
                            <label> Female Details</label>
                         </div>
+
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="fname">Name</label>
+                                <label for="name">Name</label>
                                 <input type="text" id="fname" class="form-control" name="fname" placeholder="Enter Name">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="fgender">Gender</label>
+                                <label for="gender">Gender</label>
                                 <select name="fgender" id="fgender" class="form-control select2bs4">
                                     <option value="" Selected> Select Gender</option>
                                     <option value="Male">Male</option>
-                                    <option value="Female" >Female</option>
+                                    <option value="Female">Female</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="fday">Date</label> <br>
-                                <input type="number" id="fday" name="fday" placeholder="20"  required>
-                            </div>
-                    
-                            <div class="form-group">
-                                <label for="fmonth">Month</label>
-                                <input type="number" id="fmonth" name="fmonth" placeholder="10" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="fyear">Year</label>
-                                <input type="number" id="fyear" name="fyear" placeholder="2005" required>
+                                <label for="name">Date of Birth & Time</label>
+                                <input type="datetime-local" id="fdob_time" class="form-control" name="fdob_time" placeholder="Enter your Birthday">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="fhour">Hour</label> <br>
-                                <input type="number" id="fhour" name="fhour" placeholder="8" required>
-                            </div>
-                            
-                            <div class="form-group"> 
-                                <label for="fmin">Minute</label>
-                                <input type="number" id="fmin" name="fmin" placeholder="30" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="flocation">City</label>
-                                <input type="text" id="flocation" name="flocation" 
-                                placeholder="ex. Ahmedabad, Gujarat, India" onkeyup="f_lat_lon()">
+                                <label for="location">Birth Place</label>
+                                <input type="text" id="flocation" class="form-control" name="flocation"
+                                    placeholder="ex. Ahmedabad, Gujarat, India" onkeyup="f_lat_lon()">
                             </div>
                         </div>
                         

@@ -5,22 +5,28 @@ event.preventDefault(); // Prevent form submission
   const userId = "624650";
   const apiKey = "0a3430927e3b74c01282d0b7432dd399";
   
+  var dob_time = document.getElementById("dob_time");
+  var male = new Date(dob_time.value);
+
+  var fdob_time = document.getElementById("fdob_time");
+  var female = new Date(fdob_time.value);
+
   const now = new Date()
   const data = {
-    m_day: document.getElementById("day").value,
-    m_month: document.getElementById("month").value,
-    m_year: document.getElementById("year").value,
-    m_hour: document.getElementById("hour").value,
-    m_min: document.getElementById("min").value,
+    m_day: male.getDate(),
+    m_month: male.getMonth() + 1, // Add 1 because months are zero-based
+    m_year: male.getFullYear(),
+    m_hour: male.getHours(),
+    m_min: male.getMinutes(),
     m_lat: document.getElementById("lat").value,
     m_lon: document.getElementById("lon").value,
     m_tzone: now.getTimezoneOffset() / 60,
 
-    f_day: document.getElementById("fday").value,
-    f_month: document.getElementById("fmonth").value,
-    f_year: document.getElementById("fyear").value,
-    f_hour: document.getElementById("fhour").value,
-    f_min: document.getElementById("fmin").value,
+    f_day: male.getDate(),
+    f_month: male.getMonth() + 1, // Add 1 because months are zero-based
+    f_year: male.getFullYear(),
+    f_hour: male.getHours(),
+    f_min: male.getMinutes(),
     f_lat: document.getElementById("flat").value,
     f_lon: document.getElementById("flon").value,
     f_tzone: now.getTimezoneOffset() / 60

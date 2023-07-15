@@ -19,6 +19,7 @@
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
     <link rel="Stylesheet" href="./css/style.css">
     <link rel="Stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/register.css"/>
     <link rel="Stylesheet" href="./css/breadcrumb.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,18 +51,13 @@
                         <li><a href="horoscope.html">Horoscope</a> </li>
                         <li><a href="kundli_matching.html">Kundali Matching</a></li>
                         <li><a href="chaughadiya_muhurta.html">Chaughadiya Muhurta</a></li>
-                        <!-- <li><a href="num_table.html">Numero Table</a> </li>
-                        <li><a href="planet_detail.html">Planetary Transit</a> </li>
-                        <li><a href="manglik_report.html">Manglik Report</a> -->
                     </ul>
                 </nav>
-
-                <!-- Login image -->
-                <img src="./images/profile.png" width="50px" height="40px">
+                <button class="button" onclick="window.location.href = 'login_index.html';">Logout</button>
             </div>
         </div>
     </div>
-    <div class="first" style="height: 300px;background: radial-gradient(#f8dddd,#5a9dc5);">
+    <div class="first" style="height: 275px;background: radial-gradient(#f8dddd,#5a9dc5);">
         <div class="small-container">
             <div class="row">
                 <div class="col-2" style=" padding-left: 90px;">
@@ -659,11 +655,13 @@
                  </div> `;
 
         function convertSvgToJpg(svgData, backgroundColor, divId) {
+            debugger
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext("2d");
 
             const img = new Image();
             img.onload = function () {
+                debugger
                 canvas.width = img.width;
                 canvas.height = img.height;
 
@@ -692,7 +690,6 @@
         const backgroundColor = "#ffffff"; // Background color
         const divId = "api5a";
         console.log(apidata5a)
-
         convertSvgToJpg(apidata5a.svg, backgroundColor,divId)
 
         // api5b data
@@ -713,12 +710,6 @@
 
         convertSvgToJpg(apidata5c.svg, backgroundColorc,divIdc)
         
-
-
-
-
-
-
         // api6a data
         const apidata6a = JSON.parse(localStorage.getItem("api6a"));
         const api6a = document.getElementById("api6a");
@@ -810,5 +801,4 @@
     <script src="js/jquery-validation/additional-methods.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
-
 </html>
